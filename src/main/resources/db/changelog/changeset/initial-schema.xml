@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="2020-03-05-1" author="greenmapc">
+        <createTable tableName="user">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(128)"/>
+            <column name="login" type="VARCHAR(32)"/>
+            <column name="role" type="VARCHAR(32)"/>
+            <column name="rating" type="int"/>
+            <column name="contact_phone" type="VARCHAR(10)"/>
+            <column name="geo_position" type="VARCHAR(256)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2020-03-05-2" author="greenmapc">
+        <createTable tableName="product">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(32)"/>
+            <column name="description" type="VARCHAR(512)"/>
+            <column name="rating" type="int"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2020-03-05-3" author="greenmapc">
+        <createTable tableName="basket">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="user_id" type="int">
+                <constraints unique="true"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="basket"
+                                 baseColumnNames="user_id"
+                                 constraintName="basket_user_id_fk"
+                                 referencedTableName="user"
+                                 referencedColumnNames="id"
+        />
+    </changeSet>
+
+    <changeSet id="2020-03-05-4" author="greenmapc">
+        <createTable tableName="basket_product">
+            <column name="product_id" type="int"/>
+            <column name="basket_id" type="int"/>
+            <column name="count" type="int"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="basket_product"
+                                 baseColumnNames="product_id"
+                                 constraintName="basket_product_product_fk"
+                                 referencedTableName="product"
+                                 referencedColumnNames="id"
+        />
+        <addForeignKeyConstraint baseTableName="basket_product"
+                                 baseColumnNames="basket_id"
+                                 constraintName="basket_product_basket_fk"
+                                 referencedTableName="basket"
+                                 referencedColumnNames="id"
+        />
+    </changeSet>
+
+    <changeSet id="2020-03-05-5" author="greenmapc">
+        <createTable tableName="recall">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="content" type="VARCHAR(512)"/>
+            <column name="user_id" type="int"/>
+            <column name="product_id" type="int"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="recall"
+                                 baseColumnNames="user_id"
+                                 constraintName="recall_user_fk"
+                                 referencedTableName="user"
+                                 referencedColumnNames="id"
+        />
+        <addForeignKeyConstraint baseTableName="recall"
+                                 baseColumnNames="product_id"
+                                 constraintName="recall_product_fk"
+                                 referencedTableName="product"
+                                 referencedColumnNames="id"
+        />
+    </changeSet>
+
+    <changeSet id="2020-03-05-6" author="greenmapc">
+        <createTable tableName="favorite">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="user_id" type="int"/>
+            <column name="product_id" type="int"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="favorite"
+                                 baseColumnNames="user_id"
+                                 constraintName="favorite_user_fk"
+                                 referencedTableName="user"
+                                 referencedColumnNames="id"
+        />
+        <addForeignKeyConstraint baseTableName="favorite"
+                                 baseColumnNames="product_id"
+                                 constraintName="favorite_product_fk"
+                                 referencedTableName="product"
+                                 referencedColumnNames="id"
+        />
+    </changeSet>
+
+    <changeSet id="2020-03-05-7" author="greenmapc">
+        <createTable tableName="image">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(256)"/>
+        </createTable>
+    </changeSet>
+    
+    <changeSet id="2020-03-05-8" author="greenmapc">
+        <addColumn tableName="user">
+            <column name="main_photo" type="int">
+                <constraints unique="true"/>
+            </column>
+        </addColumn>
+        <addForeignKeyConstraint baseTableName="user"
+                                 baseColumnNames="main_photo"
+                                 constraintName="user_main_photo_fk"
+                                 referencedTableName="image"
+                                 referencedColumnNames="id"
+        />
+    </changeSet>
+
+    <changeSet id="2020-03-05-9" author="greenmapc">
+        <createTable tableName="product_image">
+            <column name="product_id" type="int"/>
+            <column name="image_id" type="int"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="product_image"
+                                 baseColumnNames="product_id"
+                                 constraintName="product_image_product_fk"
+                                 referencedTableName="product"
+                                 referencedColumnNames="id"
+        />
+        <addForeignKeyConstraint baseTableName="product_image"
+                                 baseColumnNames="image_id"
+                                 constraintName="product_image_image_fk"
+                                 referencedTableName="image"
+                                 referencedColumnNames="id"
+        />
+    </changeSet>
+
+</databaseChangeLog>
