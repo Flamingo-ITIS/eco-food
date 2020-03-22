@@ -22,7 +22,7 @@
             <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="name" type="VARCHAR(32)"/>
+            <column name="title" type="VARCHAR(32)"/>
             <column name="description" type="VARCHAR(512)"/>
             <column name="rating" type="int"/>
         </createTable>
@@ -164,10 +164,22 @@
                         minValue="1"/>
     </changeSet>
 
-    <changeSet id="2020-03-1803" author="greenmapc">
+    <changeSet id="2020-03-18-3" author="greenmapc">
         <addDefaultValue tableName="site_user"
                          columnName="id"
                          defaultValueSequenceNext="user_id_seq"/>
+    </changeSet>
+
+    <changeSet id="2020-03-22-1" author="greenmapc">
+        <createSequence sequenceName="product_id_seq"
+                        incrementBy="1"
+                        minValue="1"/>
+    </changeSet>
+
+    <changeSet id="2020-03-22-2" author="greenmapc">
+        <addDefaultValue tableName="product"
+                         columnName="id"
+                         defaultValueSequenceNext="product_id_seq"/>
     </changeSet>
 
 </databaseChangeLog>
