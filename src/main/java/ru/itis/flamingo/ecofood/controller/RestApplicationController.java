@@ -22,23 +22,8 @@ public class RestApplicationController {
         return new ResponseEntity<>(userService.signUp(signUpUserDto), HttpStatus.OK);
     }
 
-    @PutMapping("/update-username")
-    public ResponseEntity<UserDto> updateUsername(@RequestBody UserDto userDto) {
-        return new ResponseEntity<>(userService.updateName(userDto), HttpStatus.OK);
-    }
-
-    @PutMapping("/update-user-password")
-    public ResponseEntity<UserDto> updateUserPassword(@RequestBody UserDto userDto) {
-        return new ResponseEntity<>(userService.updatePassword(userDto), HttpStatus.OK);
-    }
-
-    @PutMapping("/update-user-phone")
-    public ResponseEntity<UserDto> updateUserPhone(@RequestBody UserDto userDto) {
-        return new ResponseEntity<>(userService.updatePhone(userDto), HttpStatus.OK);
-    }
-
-    @PutMapping("/update-user-email")
-    public ResponseEntity<UserDto> updateUserEmail(@RequestBody UserDto userDto) {
-        return new ResponseEntity<>(userService.updateEmail(userDto), HttpStatus.OK);
+    @PutMapping("/update-user")
+    public ResponseEntity<UserDto> updateUser(@RequestBody UserDto userDto) {
+        return new ResponseEntity<>(userService.updateUser(userDto), HttpStatus.OK);
     }
 }

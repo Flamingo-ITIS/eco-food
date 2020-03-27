@@ -26,37 +26,16 @@ public class UserServiceImpl implements UserService {
     public UserDto signUp(SignUpUserDto newUser) {
         newUser.setPassword(bCryptPasswordEncoder.encode(newUser.getPassword()));
         return Optional.of(userRepository.save(userMapper.mapToEntity(newUser).setRole(Role.PARTNER)))
-            .map(userMapper::mapToDto)
-            .get();
+                .map(userMapper::mapToDto)
+                .get();
     }
 
     @Override
-    public UserDto updateName(UserDto updatedUser) {
+    public UserDto updateUser(UserDto updatedUser) {
         updatedUser.setName(updatedUser.getName());
-        return Optional.of(userRepository.save(userMapper.mapToEntity(updatedUser).setRole(Role.PARTNER)))
-                .map(userMapper::mapToDto)
-                .get();
-    }
-
-    @Override
-    public UserDto updatePhone(UserDto updatedUser) {
-        updatedUser.setContactPhone(updatedUser.getContactPhone());
-        return Optional.of(userRepository.save(userMapper.mapToEntity(updatedUser).setRole(Role.PARTNER)))
-                .map(userMapper::mapToDto)
-                .get();
-    }
-
-    @Override
-    public UserDto updateEmail(UserDto updatedUser) {
-        updatedUser.setEmail(updatedUser.getEmail());
-        return Optional.of(userRepository.save(userMapper.mapToEntity(updatedUser).setRole(Role.PARTNER)))
-                .map(userMapper::mapToDto)
-                .get();
-    }
-
-    @Override
-    public UserDto updatePassword(UserDto updatedUser) {
         updatedUser.setPassword(updatedUser.getPassword());
+        updatedUser.setContactPhone(updatedUser.getContactPhone());
+        updatedUser.setEmail(updatedUser.getEmail());
         return Optional.of(userRepository.save(userMapper.mapToEntity(updatedUser).setRole(Role.PARTNER)))
                 .map(userMapper::mapToDto)
                 .get();
