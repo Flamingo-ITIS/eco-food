@@ -29,4 +29,36 @@ public class UserServiceImpl implements UserService {
             .map(userMapper::mapToDto)
             .get();
     }
+
+    @Override
+    public UserDto updateName(UserDto updatedUser) {
+        updatedUser.setName(updatedUser.getName());
+        return Optional.of(userRepository.save(userMapper.mapToEntity(updatedUser).setRole(Role.PARTNER)))
+                .map(userMapper::mapToDto)
+                .get();
+    }
+
+    @Override
+    public UserDto updatePhone(UserDto updatedUser) {
+        updatedUser.setContactPhone(updatedUser.getContactPhone());
+        return Optional.of(userRepository.save(userMapper.mapToEntity(updatedUser).setRole(Role.PARTNER)))
+                .map(userMapper::mapToDto)
+                .get();
+    }
+
+    @Override
+    public UserDto updateEmail(UserDto updatedUser) {
+        updatedUser.setEmail(updatedUser.getEmail());
+        return Optional.of(userRepository.save(userMapper.mapToEntity(updatedUser).setRole(Role.PARTNER)))
+                .map(userMapper::mapToDto)
+                .get();
+    }
+
+    @Override
+    public UserDto updatePassword(UserDto updatedUser) {
+        updatedUser.setPassword(updatedUser.getPassword());
+        return Optional.of(userRepository.save(userMapper.mapToEntity(updatedUser).setRole(Role.PARTNER)))
+                .map(userMapper::mapToDto)
+                .get();
+    }
 }

@@ -7,4 +7,12 @@ public interface UserService {
 
     UserDto signUp(SignUpUserDto newUser);
 
+    UserDto updateName(UserDto updatedUser);
+
+    UserDto updatePhone(UserDto updatedUser);
+
+    UserDto updateEmail(UserDto updatedUser);
+
+    UserDto updatePassword(UserDto updatedUser);
+
 }

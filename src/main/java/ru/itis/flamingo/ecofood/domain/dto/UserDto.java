@@ -13,4 +13,6 @@ public class UserDto {
     private Long rating;
     private String contactPhone;
     private String geoPosition;
+    private String email;
+    private String password;
 }
