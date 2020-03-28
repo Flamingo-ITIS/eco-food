@@ -16,6 +16,5 @@ public class UserDto {
     private String contactPhone;
     private String geoPosition;
     private String email;
-    private String password;
     private List<ProductDto> favorites;
 }
