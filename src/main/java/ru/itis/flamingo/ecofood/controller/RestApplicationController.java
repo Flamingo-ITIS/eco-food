@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import ru.itis.flamingo.ecofood.domain.dto.SignUpUserDto;
@@ -21,5 +22,8 @@ public class RestApplicationController {
         return new ResponseEntity<>(userService.signUp(signUpUserDto), HttpStatus.OK);
     }
 
-
+    @PutMapping("/update-user")
+    public ResponseEntity<UserDto> updateUser(@RequestBody UserDto userDto) {
+        return new ResponseEntity<>(userService.updateUser(userDto), HttpStatus.OK);
+    }
 }

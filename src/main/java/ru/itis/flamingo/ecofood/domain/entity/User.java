@@ -49,12 +49,14 @@ public class User implements UserDetails {
     @Column(name = "contact_phone")
     private String contactPhone;
 
+    @Column(name = "email")
+    private String email;
+
     @Column(name = "geo_position")
     private String geoPosition;
 
     @Enumerated(EnumType.STRING)
     private Role role;
-
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

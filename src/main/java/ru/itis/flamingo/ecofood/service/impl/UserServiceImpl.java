@@ -26,7 +26,18 @@ public class UserServiceImpl implements UserService {
     public UserDto signUp(SignUpUserDto newUser) {
         newUser.setPassword(bCryptPasswordEncoder.encode(newUser.getPassword()));
         return Optional.of(userRepository.save(userMapper.mapToEntity(newUser).setRole(Role.PARTNER)))
-            .map(userMapper::mapToDto)
-            .get();
+                .map(userMapper::mapToDto)
+                .get();
+    }
+
+    @Override
+    public UserDto updateUser(UserDto updatedUser) {
+        updatedUser.setName(updatedUser.getName());
+        updatedUser.setPassword(updatedUser.getPassword());
+        updatedUser.setContactPhone(updatedUser.getContactPhone());
+        updatedUser.setEmail(updatedUser.getEmail());
+        return Optional.of(userRepository.save(userMapper.mapToEntity(updatedUser).setRole(Role.PARTNER)))
+                .map(userMapper::mapToDto)
+                .get();
     }
 }
