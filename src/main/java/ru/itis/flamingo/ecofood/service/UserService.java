@@ -7,5 +7,8 @@ public interface UserService {
 
     UserDto signUp(SignUpUserDto newUser);
 
-    UserDto updateUser(UserDto updatedUser);
+    UserDto getUserByUsername(String username);
+
+    void update(UserDto userDto);
+
 }

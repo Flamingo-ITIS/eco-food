@@ -3,6 +3,8 @@ package ru.itis.flamingo.ecofood.domain.dto;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+import java.util.List;
+
 @Data
 @Accessors(chain = true)
 public class UserDto {
@@ -15,4 +17,5 @@ public class UserDto {
     private String geoPosition;
     private String email;
     private String password;
+    private List<ProductDto> favorites;
 }

@@ -24,6 +24,7 @@ public class RestApplicationController {
 
     @PutMapping("/update-user")
     public ResponseEntity<UserDto> updateUser(@RequestBody UserDto userDto) {
-        return new ResponseEntity<>(userService.updateUser(userDto), HttpStatus.OK);
+        userService.update(userDto);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

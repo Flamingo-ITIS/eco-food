@@ -188,4 +188,13 @@
         </addColumn>
     </changeSet>
 
+    <changeSet id="2020-03-29-1" author="greenmapc">
+        <modifyDataType tableName="favorite" columnName="user_id" newDataType="bigint"/>
+        <modifyDataType tableName="favorite" columnName="product_id" newDataType="bigint"/>
+    </changeSet>
+
+    <changeSet id="2020-03-29-2" author="greenmapc">
+        <dropColumn tableName="favorite" columnName="id"/>
+    </changeSet>
+
 </databaseChangeLog>

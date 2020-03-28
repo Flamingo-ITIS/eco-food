@@ -31,13 +31,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto updateUser(UserDto updatedUser) {
-        updatedUser.setName(updatedUser.getName());
-        updatedUser.setPassword(updatedUser.getPassword());
-        updatedUser.setContactPhone(updatedUser.getContactPhone());
-        updatedUser.setEmail(updatedUser.getEmail());
-        return Optional.of(userRepository.save(userMapper.mapToEntity(updatedUser).setRole(Role.PARTNER)))
-                .map(userMapper::mapToDto)
-                .get();
+    public void update(UserDto updatedUser) {
+        userRepository.save(userMapper.mapToEntity(updatedUser));
     }
+
+    @Override
+    public UserDto getUserByUsername(String username) {
+        return userRepository.findUserByUsername(username)
+            .map(userMapper::mapToDto)
+            .orElseThrow(() -> new IllegalArgumentException("User with username " + username + " not found"));
+    }
+
 }
