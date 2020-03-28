@@ -69,7 +69,7 @@ public class ProductController {
     }
 
     @ApiOperation(
-        value = "Update product by id / Обновить товар по идентификатору"
+        value = "Delete product by id / Удалить товар по идентификатору"
     )
     @DeleteMapping(value = "/{id}")
     public ResponseEntity delete(@PathVariable Long id) {
