@@ -2,7 +2,9 @@ package ru.itis.flamingo.ecofood.domain.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,12 +21,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Table(name = "site_user")
 @Entity
@@ -70,6 +75,10 @@ public class User implements UserDetails {
         inverseJoinColumns = @JoinColumn(name = "product_id")
     )
     private List<Product> favorites = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user")
+    @EqualsAndHashCode.Exclude
+    private Set<UserBasket> basket = new HashSet<>();
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -197,4 +197,29 @@
         <dropColumn tableName="favorite" columnName="id"/>
     </changeSet>
 
+    <changeSet id="2020-03-29-3" author="greenmapc">
+        <dropForeignKeyConstraint baseTableName="basket_product" constraintName="basket_product_basket_fk"/>
+        <dropTable tableName="basket"/>
+        <addColumn tableName="basket_product">
+            <column name="user_id" type="bigint">
+            <constraints unique="true"/>
+            </column>
+        </addColumn>
+        <addForeignKeyConstraint baseTableName="basket_product"
+                                 baseColumnNames="user_id"
+                                 constraintName="basket_product_user_fk"
+                                 referencedTableName="site_user"
+                                 referencedColumnNames="id"
+        />
+    </changeSet>
+
+    <changeSet id="2020-03-29-4" author="greenmapc">
+        <dropColumn tableName="basket_product" columnName="basket_id"/>
+    </changeSet>
+
+    <changeSet id="2020-03-29-5" author="greenmapc">
+        <modifyDataType tableName="basket_product" columnName="product_id" newDataType="bigint"/>
+    </changeSet>
+    
+
 </databaseChangeLog>

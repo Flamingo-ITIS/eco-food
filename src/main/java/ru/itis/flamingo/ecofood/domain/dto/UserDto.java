@@ -2,6 +2,7 @@ package ru.itis.flamingo.ecofood.domain.dto;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
+import ru.itis.flamingo.ecofood.domain.entity.UserBasket;
 
 import java.util.List;
 
@@ -17,4 +18,5 @@ public class UserDto {
     private String geoPosition;
     private String email;
     private List<ProductDto> favorites;
+    private List<UserBasket> basket;
 }
