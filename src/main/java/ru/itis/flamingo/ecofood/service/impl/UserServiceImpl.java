@@ -32,14 +32,20 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void update(UserDto updatedUser) {
-        userRepository.save(userMapper.mapToEntity(updatedUser));
+        if (!(updatedUser.getContactPhone().isEmpty() ||
+                updatedUser.getName().isEmpty() ||
+                updatedUser.getEmail().isEmpty()))
+            userRepository.save(userMapper.mapToEntity(updatedUser));
+        else {
+            throw new IllegalArgumentException("User's data is empty");
+        }
     }
 
     @Override
     public UserDto getUserByUsername(String username) {
         return userRepository.findUserByUsername(username)
-            .map(userMapper::mapToDto)
-            .orElseThrow(() -> new IllegalArgumentException("User with username " + username + " not found"));
+                .map(userMapper::mapToDto)
+                .orElseThrow(() -> new IllegalArgumentException("User with username " + username + " not found"));
     }
 
 }
