@@ -27,4 +27,10 @@ public class RestApplicationController {
         userService.update(userDto);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @PutMapping("/delete-user")
+    public ResponseEntity<UserDto> delete(@RequestBody UserDto userDto) {
+        userService.deleteUser(userDto);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

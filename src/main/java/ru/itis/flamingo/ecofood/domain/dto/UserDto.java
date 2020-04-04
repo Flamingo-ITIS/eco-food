@@ -19,4 +19,5 @@ public class UserDto {
     private String email;
     private List<ProductDto> favorites;
     private List<UserBasket> basket;
+    private Boolean isDeleted;
 }

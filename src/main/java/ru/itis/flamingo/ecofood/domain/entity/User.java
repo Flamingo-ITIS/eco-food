@@ -65,6 +65,9 @@ public class User implements UserDetails {
     @Column(name = "geo_position")
     private String geoPosition;
 
+    @Column(name = "is_deleted")
+    private Boolean isDeleted;
+
     @Enumerated(EnumType.STRING)
     private Role role;
 
@@ -96,7 +99,9 @@ public class User implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return true;
+        if (isDeleted != null) {
+            return !isDeleted;
+        } else return true;
     }
 
     @Override
@@ -111,6 +116,8 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        if (isDeleted != null) {
+            return !isDeleted;
+        } else return true;
     }
 }
