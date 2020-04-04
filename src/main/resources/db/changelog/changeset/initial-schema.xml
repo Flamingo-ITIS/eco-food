@@ -188,12 +188,6 @@
         </addColumn>
     </changeSet>
 
-    <changeSet id="2020-04-04-1" author="adelina" >
-        <addColumn tableName="site_user">
-            <column name="is_deleted" type="boolean"/>
-        </addColumn>
-    </changeSet>
-
     <changeSet id="2020-03-29-1" author="greenmapc">
         <modifyDataType tableName="favorite" columnName="user_id" newDataType="bigint"/>
         <modifyDataType tableName="favorite" columnName="product_id" newDataType="bigint"/>
@@ -226,6 +220,11 @@
     <changeSet id="2020-03-29-5" author="greenmapc">
         <modifyDataType tableName="basket_product" columnName="product_id" newDataType="bigint"/>
     </changeSet>
-    
+
+    <changeSet id="2020-04-04-1" author="adelina" >
+        <addColumn tableName="site_user">
+            <column name="is_deleted" type="boolean"/>
+        </addColumn>
+    </changeSet>
 
 </databaseChangeLog>

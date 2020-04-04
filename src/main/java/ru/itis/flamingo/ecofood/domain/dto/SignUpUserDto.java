@@ -9,4 +9,5 @@ public class SignUpUserDto {
     private String name;
     private String contactPhone;
     private String geoPosition;
+    private Boolean isDeleted;
 }

@@ -25,6 +25,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto signUp(SignUpUserDto newUser) {
         newUser.setPassword(bCryptPasswordEncoder.encode(newUser.getPassword()));
+        newUser.setIsDeleted(false);
         return Optional.of(userRepository.save(userMapper.mapToEntity(newUser).setRole(Role.PARTNER)))
                 .map(userMapper::mapToDto)
                 .get();
@@ -43,7 +44,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteUser(UserDto userDto){
-        userDto.setDeleted(true);
+        userDto.setIsDeleted(true);
         userRepository.save(userMapper.mapToEntity(userDto));
     }
 

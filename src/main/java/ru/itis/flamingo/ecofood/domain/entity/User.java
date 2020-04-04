@@ -66,7 +66,7 @@ public class User implements UserDetails {
     private String geoPosition;
 
     @Column(name = "is_deleted")
-    private boolean isDeleted;
+    private Boolean isDeleted;
 
     @Enumerated(EnumType.STRING)
     private Role role;
@@ -99,7 +99,9 @@ public class User implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return !isDeleted;
+        if (isDeleted != null) {
+            return !isDeleted;
+        } else return true;
     }
 
     @Override
