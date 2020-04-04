@@ -42,6 +42,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public void deleteUser(UserDto userDto){
+        userDto.setDeleted(true);
+        userRepository.save(userMapper.mapToEntity(userDto));
+    }
+
+    @Override
     public UserDto getUserByUsername(String username) {
         return userRepository.findUserByUsername(username)
                 .map(userMapper::mapToDto)
