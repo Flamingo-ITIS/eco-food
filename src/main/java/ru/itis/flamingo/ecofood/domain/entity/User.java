@@ -4,12 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import ru.itis.flamingo.ecofood.domain.entity.enums.Role;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -22,6 +22,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import java.util.ArrayList;
@@ -82,6 +83,10 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "user")
     @EqualsAndHashCode.Exclude
     private Set<UserBasket> basket = new HashSet<>();
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "main_photo", referencedColumnName = "id")
+    private Image mainPhoto;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

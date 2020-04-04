@@ -227,4 +227,16 @@
         </addColumn>
     </changeSet>
 
+    <changeSet id="2020-04-05-1" author="greenmapc">
+        <createSequence sequenceName="image_id_seq"
+                        incrementBy="1"
+                        minValue="1"/>
+    </changeSet>
+
+    <changeSet id="2020-04-05-2" author="greenmapc">
+        <modifyDataType tableName="site_user" columnName="main_photo" newDataType="bigint"/>
+    </changeSet>
+
+
+
 </databaseChangeLog>

@@ -20,3 +20,6 @@ server:
 jwt:
   secret: secret
   expirationInMs: 604800000
+
+user_data:
+  photo_path: ${profile.photo.path}
