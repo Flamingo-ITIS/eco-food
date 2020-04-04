@@ -116,6 +116,8 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return !isDeleted;
+        if (isDeleted != null) {
+            return !isDeleted;
+        } else return true;
     }
 }
