@@ -3,6 +3,7 @@ package ru.itis.flamingo.ecofood.domain.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import lombok.experimental.Accessors;
 import ru.itis.flamingo.ecofood.domain.entity.enums.CountType;
 
@@ -50,5 +51,9 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
 }

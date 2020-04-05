@@ -1,24 +1,20 @@
 package ru.itis.flamingo.ecofood.domain.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-import ru.itis.flamingo.ecofood.domain.entity.Buy;
-
-import java.util.List;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Accessors(chain = true)
-public class UserDto {
+public class CommonSellerDto {
     private Long id;
     private String username;
     private String name;
-    private String role;
     private Long rating;
     private String contactPhone;
     private String geoPosition;
     private String email;
-    private List<ProductDto> favorites;
-    private List<Buy> buys;
-    private Boolean isDeleted;
-    private List<ProductDto> products;
 }

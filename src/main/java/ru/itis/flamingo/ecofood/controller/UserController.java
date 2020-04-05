@@ -81,4 +81,9 @@ public class UserController {
         return new ResponseEntity<>(mediaService.getProfilePhoto(username), HttpStatus.OK);
     }
 
+    @GetMapping("/{username}/users")
+    public ResponseEntity<UserDto> getUserByUsername(@PathVariable String username) {
+        return new ResponseEntity<>(userService.getUserByUsername(username), HttpStatus.OK);
+    }
+
 }

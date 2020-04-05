@@ -14,4 +14,5 @@ public class ProductDto {
     private Integer count;
     private CategoryDto category;
     private CountType countType;
+    private CommonSellerDto user;
 }

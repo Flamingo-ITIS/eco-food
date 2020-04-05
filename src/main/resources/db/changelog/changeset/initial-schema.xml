@@ -291,6 +291,18 @@
         </sql>
     </changeSet>
 
+    <changeSet id="2020-04-05-08" author="greenmapc">
+        <addColumn tableName="product">
+            <column name="user_id" type="bigint"/>
+        </addColumn>
+        <addForeignKeyConstraint baseTableName="product"
+                                 baseColumnNames="user_id"
+                                 constraintName="user_product_id_fk"
+                                 referencedTableName="site_user"
+                                 referencedColumnNames="id"
+        />
+    </changeSet>
+
 
 
 </databaseChangeLog>

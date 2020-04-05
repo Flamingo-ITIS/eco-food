@@ -1,6 +1,7 @@
 package ru.itis.flamingo.ecofood.mapper;
 
 import org.mapstruct.Mapper;
+import ru.itis.flamingo.ecofood.domain.dto.CommonSellerDto;
 import ru.itis.flamingo.ecofood.domain.dto.SignUpUserDto;
 import ru.itis.flamingo.ecofood.domain.dto.UserDto;
 import ru.itis.flamingo.ecofood.domain.entity.User;
@@ -13,5 +14,7 @@ public interface UserMapper {
     User mapToEntity(UserDto dto);
 
     User mapToEntity(SignUpUserDto dto);
+
+    CommonSellerDto mapToCommonSellerDto(User entity);
 
 }

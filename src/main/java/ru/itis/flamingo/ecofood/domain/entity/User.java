@@ -80,7 +80,11 @@ public class User implements UserDetails {
     )
     private List<Product> favorites = new ArrayList<>();
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @EqualsAndHashCode.Exclude
+    private List<Product> products = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     @EqualsAndHashCode.Exclude
     private Set<Buy> buys = new HashSet<>();
 

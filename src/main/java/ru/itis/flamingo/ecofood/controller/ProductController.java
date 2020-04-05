@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,6 +20,7 @@ import ru.itis.flamingo.ecofood.domain.dto.ProductDto;
 import ru.itis.flamingo.ecofood.domain.dto.ProductRequest;
 import ru.itis.flamingo.ecofood.service.ProductService;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -50,8 +52,9 @@ public class ProductController {
         value = "Create new product / Создать новый товар"
     )
     @PostMapping
-    public ResponseEntity<ProductDto> save(@RequestBody @Validated ProductRequest productRequest) {
-        return new ResponseEntity<>(productService.create(productRequest), HttpStatus.OK);
+    public ResponseEntity<ProductDto> save(@RequestBody @Validated ProductRequest productRequest,
+                                           @AuthenticationPrincipal Principal principal) {
+        return new ResponseEntity<>(productService.create(principal.getName(), productRequest), HttpStatus.OK);
     }
 
     @ApiOperation(
@@ -80,5 +83,14 @@ public class ProductController {
         productService.delete(id);
         return new ResponseEntity(HttpStatus.OK);
     }
+
+    @ApiOperation(
+        value = "Get user's products / Получить товары пользователя"
+    )
+    @GetMapping("/{username}/users")
+    public ResponseEntity<List<ProductDto>> getProductsByUser(@PathVariable String username) {
+        return new ResponseEntity<>(productService.getProductsByUser(username), HttpStatus.OK);
+    }
+
 
 }

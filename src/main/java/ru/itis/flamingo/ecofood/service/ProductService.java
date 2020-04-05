@@ -11,12 +11,14 @@ public interface ProductService {
 
     ProductDto findById(Long id);
 
-    ProductDto create(ProductRequest productDto);
+    ProductDto create(String username, ProductRequest productDto);
 
     void update(ProductDto productDto);
 
     void delete(ProductDto productDto);
 
     void delete(Long id);
+
+    List<ProductDto> getProductsByUser(String username);
 
 }

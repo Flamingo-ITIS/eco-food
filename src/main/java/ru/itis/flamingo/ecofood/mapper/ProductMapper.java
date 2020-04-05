@@ -4,7 +4,9 @@ import org.mapstruct.Mapper;
 import ru.itis.flamingo.ecofood.domain.dto.ProductDto;
 import ru.itis.flamingo.ecofood.domain.entity.Product;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {
+    UserMapper.class
+})
 public interface ProductMapper {
 
     ProductDto mapToDto(Product entity);
