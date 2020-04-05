@@ -22,7 +22,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @Api(value = "Buy Controller", description = "Buy operations")
-@RequestMapping("/buy")
+@RequestMapping("/buys")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class BuyController {
 

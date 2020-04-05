@@ -24,7 +24,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @Api(value = "ProductController", description = "Product operations")
-@RequestMapping("/product")
+@RequestMapping("/products")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ProductController {
 
