@@ -13,10 +13,9 @@ import org.springframework.stereotype.Service;
 import ru.itis.flamingo.ecofood.exception.UnauthorizedException;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.stream.Collectors;
 
 @Service
@@ -27,6 +26,8 @@ public class JwtService {
 
     @Value("${jwt.expirationInMs}")
     private int jwtExpirationInMs;
+
+    private final ConcurrentLinkedQueue<String> expireTokens = new ConcurrentLinkedQueue<>();
 
     public JwtToken generateToken(String username) {
         Claims claims = Jwts.claims().setSubject(username);
@@ -68,6 +69,9 @@ public class JwtService {
 
     public boolean validateToken(String token) {
         try {
+            if (expireTokens.contains(token)) {
+                throw new UnauthorizedException("Expired or invalid JWT token");
+            }
             Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token);
             return true;
         } catch (JwtException | IllegalArgumentException e) {
@@ -75,6 +79,8 @@ public class JwtService {
         }
     }
 
-
+    public void addExpireToken(String token) {
+        expireTokens.add(token);
+    }
 
 }
