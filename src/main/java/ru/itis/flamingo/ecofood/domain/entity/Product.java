@@ -4,9 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
+import ru.itis.flamingo.ecofood.domain.entity.enums.CountType;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -34,5 +37,9 @@ public class Product {
 
     @Column(name = "rating")
     private Integer  rating;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "count_type")
+    private CountType countType;
 
 }

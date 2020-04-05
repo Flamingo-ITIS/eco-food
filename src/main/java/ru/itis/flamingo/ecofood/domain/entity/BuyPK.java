@@ -11,7 +11,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Data
 @Accessors(chain = true)
-public class Basket implements Serializable {
+public class BuyPK implements Serializable {
     private Long user;
     private Long product;
 }

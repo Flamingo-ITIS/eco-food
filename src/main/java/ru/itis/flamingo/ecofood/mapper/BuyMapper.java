@@ -2,13 +2,13 @@ package ru.itis.flamingo.ecofood.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import ru.itis.flamingo.ecofood.domain.dto.ProductBasketDto;
-import ru.itis.flamingo.ecofood.domain.entity.UserBasket;
+import ru.itis.flamingo.ecofood.domain.dto.BuyDto;
+import ru.itis.flamingo.ecofood.domain.entity.Buy;
 
 @Mapper(componentModel = "spring")
-public interface ProductBasketMapper {
+public interface BuyMapper {
 
     @Mapping(target = "title", source = "product.title")
     @Mapping(target = "id", source = "product.id")
-    ProductBasketDto mapToDto(UserBasket userBasket);
+    BuyDto mapToDto(Buy buy);
 }

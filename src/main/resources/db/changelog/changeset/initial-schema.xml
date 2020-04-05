@@ -237,6 +237,23 @@
         <modifyDataType tableName="site_user" columnName="main_photo" newDataType="bigint"/>
     </changeSet>
 
+    <changeSet id="2020-04-05-3" author="greenmapc">
+        <renameTable oldTableName="basket_product" newTableName="buy"/>
+        <addColumn tableName="buy">
+            <column name="cost" type="int"/>
+            <column name="delivery_type" type="VARCHAR(32)"/>
+            <column name="payment_type" type="VARCHAR(32)"/>
+            <column name="status" type="VARCHAR(32)"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="2020-04-05-4" author="greenmapc">
+        <addColumn tableName="product">
+            <column name="count" type="int"/>
+            <column name="count_type" type="VARCHAR(32)"/>
+        </addColumn>
+    </changeSet>
+
 
 
 </databaseChangeLog>

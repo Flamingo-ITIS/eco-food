@@ -82,7 +82,7 @@ public class User implements UserDetails {
 
     @OneToMany(mappedBy = "user")
     @EqualsAndHashCode.Exclude
-    private Set<UserBasket> basket = new HashSet<>();
+    private Set<Buy> buys = new HashSet<>();
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "main_photo", referencedColumnName = "id")
