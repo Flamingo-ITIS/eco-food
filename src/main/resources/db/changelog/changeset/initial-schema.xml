@@ -253,6 +253,43 @@
             <column name="count_type" type="VARCHAR(32)"/>
         </addColumn>
     </changeSet>
+    
+    <changeSet id="2020-04-05-5" author="greenmapc">
+        <createTable tableName="category">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(128)"/>
+        </createTable>
+        <createSequence sequenceName="category_id_seq"
+                        incrementBy="1"
+                        minValue="1"/>
+    </changeSet>
+    
+    <changeSet id="2020-04-05-06" author="greenmapc">
+        <addColumn tableName="product">
+            <column name="category_id" type="bigint"/>
+        </addColumn>
+        <addForeignKeyConstraint baseTableName="product"
+                                 baseColumnNames="category_id"
+                                 constraintName="product_category_id_fk"
+                                 referencedTableName="category"
+                                 referencedColumnNames="id"
+        />
+    </changeSet>
+
+    <changeSet id="2020-04-05-07" author="greenmapc">
+        <sql> INSERT INTO category VALUES(nextval('category_id_seq'), 'FRUIT'),
+            (nextval('category_id_seq'), 'VEGETABLE'),
+            (nextval('category_id_seq'), 'BERRY'),
+            (nextval('category_id_seq'), 'MUSHROOM'),
+            (nextval('category_id_seq'), 'HONEY'),
+            (nextval('category_id_seq'), 'NUT'),
+            (nextval('category_id_seq'), 'GREEN_AND_SPICE'),
+            (nextval('category_id_seq'), 'DRIED_FRUITS'),
+            (nextval('category_id_seq'), 'DRINKS')
+        </sql>
+    </changeSet>
 
 
 

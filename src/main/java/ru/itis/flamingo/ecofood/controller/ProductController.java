@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.itis.flamingo.ecofood.domain.dto.ProductDto;
+import ru.itis.flamingo.ecofood.domain.dto.ProductRequest;
 import ru.itis.flamingo.ecofood.service.ProductService;
 
 import java.util.List;
@@ -48,8 +50,8 @@ public class ProductController {
         value = "Create new product / Создать новый товар"
     )
     @PostMapping
-    public ResponseEntity<ProductDto> save(@RequestBody ProductDto productDto) {
-        return new ResponseEntity<>(productService.create(productDto), HttpStatus.OK);
+    public ResponseEntity<ProductDto> save(@RequestBody @Validated ProductRequest productRequest) {
+        return new ResponseEntity<>(productService.create(productRequest), HttpStatus.OK);
     }
 
     @ApiOperation(

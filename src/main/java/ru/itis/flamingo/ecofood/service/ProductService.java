@@ -1,6 +1,7 @@
 package ru.itis.flamingo.ecofood.service;
 
 import ru.itis.flamingo.ecofood.domain.dto.ProductDto;
+import ru.itis.flamingo.ecofood.domain.dto.ProductRequest;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ public interface ProductService {
 
     ProductDto findById(Long id);
 
-    ProductDto create(ProductDto productDto);
+    ProductDto create(ProductRequest productDto);
 
     void update(ProductDto productDto);
 
