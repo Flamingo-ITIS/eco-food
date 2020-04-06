@@ -314,4 +314,10 @@
             <column name="date" type="VARCHAR(32)"/>
         </createTable>
     </changeSet>
+
+    <changeSet id="2020-04-06-2" author="adelina" >
+        <createSequence sequenceName="article_id_seq"
+                        incrementBy="1"
+                        minValue="1"/>
+    </changeSet>
 </databaseChangeLog>
