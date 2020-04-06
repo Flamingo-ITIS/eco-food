@@ -10,6 +10,8 @@ import ru.itis.flamingo.ecofood.mapper.ArticleMapper;
 import ru.itis.flamingo.ecofood.service.ArticleService;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -22,11 +24,9 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public List<ArticleDto> getAllArticles() {
         List<Article> articles = articleRepository.findAll();
-        List<ArticleDto> articlesDto = new ArrayList<>();
-        for (Article article : articles) {
-            articlesDto.add(articleMapper.mapToDto(article));
-        }
-        return articlesDto;
+        return articles.stream()
+                .map(articleMapper :: mapToDto)
+                .collect(Collectors.toList());
     }
 
     @Override
