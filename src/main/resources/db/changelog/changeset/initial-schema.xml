@@ -303,6 +303,15 @@
         />
     </changeSet>
 
-
-
+    <changeSet id="2020-04-06-1" author="adelina" >
+        <createTable tableName="article">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(128)"/>
+            <column name="lid" type="TEXT"/>
+            <column name="text" type="TEXT"/>
+            <column name="date" type="VARCHAR(32)"/>
+        </createTable>
+    </changeSet>
 </databaseChangeLog>
