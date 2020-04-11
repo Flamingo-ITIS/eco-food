@@ -41,7 +41,7 @@ public class BuyServiceImpl implements BuyService {
             .setDeliveryType(buyRequest.getDeliveryType())
             .setPaymentType(buyRequest.getPaymentType())
             .setStatus(PaymentStatus.PAID);
-        return buyMapper.mapToDto(buyRepository.save(buy));
+        return buyMapper.apply(buyRepository.save(buy));
     }
 
     @Override
@@ -49,7 +49,7 @@ public class BuyServiceImpl implements BuyService {
         return userService.getUserByUsername(username)
             .getBuys()
             .stream()
-            .map(buyMapper::mapToDto)
+            .map(buyMapper)
             .collect(Collectors.toList());
     }
 }

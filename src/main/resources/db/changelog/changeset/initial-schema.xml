@@ -303,6 +303,37 @@
         />
     </changeSet>
 
+    <changeSet id="2020-04-12--01" author="greenmapc">
+        <addColumn tableName="recall">
+            <column name="image_id" type="bigint"/>
+            <column name="value" type="smallint"/>
+            <column name="text_content" type="text"/>
+        </addColumn>
+    </changeSet>
 
+    <changeSet id="2020-04-12--02" author="greenmapc">
+        <addForeignKeyConstraint baseTableName="recall"
+                                 baseColumnNames="image_id"
+                                 constraintName="recall_image_FK"
+                                 referencedTableName="image"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="2020-04-12--03" author="greenmapc">
+        <renameColumn tableName="recall" oldColumnName="user_id" newColumnName="customer_id"/>
+    </changeSet>
+
+    <changeSet id="2020-04-12--04" author="greenmapc">
+        <modifyDataType tableName="recall" columnName="customer_id" newDataType="bigint"/>
+        <modifyDataType tableName="recall" columnName="product_id" newDataType="bigint"/>
+    </changeSet>
+
+    <changeSet id="2020-04-12--05" author="greenmapc">
+        <dropColumn tableName="recall" columnName="content"/>
+    </changeSet>
+
+    <changeSet id="2020-04-12--06" author="greenmapc">
+        <addUniqueConstraint tableName="site_user" columnNames="username"/>
+    </changeSet>
 
 </databaseChangeLog>
