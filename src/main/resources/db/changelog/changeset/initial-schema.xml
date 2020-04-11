@@ -303,6 +303,24 @@
         />
     </changeSet>
 
+    <changeSet id="2020-04-06-1" author="adelina" >
+        <createTable tableName="article">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(128)"/>
+            <column name="lid" type="TEXT"/>
+            <column name="text" type="TEXT"/>
+            <column name="date" type="VARCHAR(32)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2020-04-06-2" author="adelina" >
+        <createSequence sequenceName="article_id_seq"
+                        incrementBy="1"
+                        minValue="1"/>
+    </changeSet>
+
     <changeSet id="2020-04-12--01" author="greenmapc">
         <addColumn tableName="recall">
             <column name="image_id" type="bigint"/>
