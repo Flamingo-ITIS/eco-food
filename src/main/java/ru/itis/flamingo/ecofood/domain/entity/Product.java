@@ -39,7 +39,7 @@ public class Product {
     private String description;
 
     @Column(name = "rating")
-    private Integer  rating;
+    private Double rating;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "count_type")

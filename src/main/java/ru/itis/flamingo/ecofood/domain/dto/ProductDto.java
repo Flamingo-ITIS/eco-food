@@ -10,7 +10,7 @@ public class ProductDto {
     private Long id;
     private String title;
     private String description;
-    private Integer rating;
+    private Double rating;
     private Integer count;
     private CategoryDto category;
     private CountType countType;

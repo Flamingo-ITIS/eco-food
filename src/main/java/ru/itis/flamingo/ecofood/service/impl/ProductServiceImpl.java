@@ -49,13 +49,13 @@ public class ProductServiceImpl implements ProductService {
         var user = userService.getUserByUsername(username);
         var product = new Product()
             .setTitle(productRequest.getTitle())
-            .setRating(0)
+            .setRating(0D)
             .setDescription(productRequest.getDescription())
             .setCategory(categoryMapper.mapToEntity(category))
             .setCount(productRequest.getCount())
             .setCountType(productRequest.getCountType())
             .setUser(userMapper.mapToEntity(user));
-        product.setRating(0);
+        product.setRating(0D);
         return productMapper.mapToDto(productRepository.save(product));
     }
 

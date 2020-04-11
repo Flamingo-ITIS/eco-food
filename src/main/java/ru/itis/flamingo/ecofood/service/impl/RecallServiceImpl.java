@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.itis.flamingo.ecofood.domain.dto.RecallRequest;
 import ru.itis.flamingo.ecofood.domain.dto.RecallResponse;
+import ru.itis.flamingo.ecofood.domain.entity.Product;
 import ru.itis.flamingo.ecofood.domain.entity.Recall;
 import ru.itis.flamingo.ecofood.domain.repository.RecallRepository;
 import ru.itis.flamingo.ecofood.exception.ResourceNotFoundException;
@@ -47,6 +48,8 @@ public class RecallServiceImpl implements RecallService {
             .setMessage(recallRequest.getMessage())
             .setValue(recallRequest.getValue());
         recallRepository.save(recall);
+        recalculateAvgRating(product);
+        productService.update(productMapper.mapToDto(product));
     }
 
     @Override
@@ -66,6 +69,13 @@ public class RecallServiceImpl implements RecallService {
             throw new IllegalArgumentException("Have not permission for delete this recall");
         }
         recallRepository.delete(recall);
+    }
+
+    private void recalculateAvgRating(Product product) {
+        var allRecalls = this.findAllByProduct(product.getId());
+        product.setRating(allRecalls.stream()
+            .mapToDouble(RecallResponse::getValue)
+            .sum() / allRecalls.size());
     }
 
 }
