@@ -359,4 +359,111 @@
     </changeSet>
 
     <include file="db/changelog/changeset/fill-bd.xml"/>
+
+    <changeSet id="2020-04-18-5" author="greenmapc">
+        <modifyDataType tableName="product" columnName="rating" newDataType="double"/>
+    </changeSet>
+
+    <changeSet id="2020-04-18-6" author="greenmapc">
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id=10</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id=11</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id=12</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id=13</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id=14</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id=15</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id=16</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id=17</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id=18</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id=20</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id=21</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="4.0"/>
+            <where>id=19</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="2020-04-18-7" author="greenmapc">
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id='10'</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id='11'</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id='12'</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id='13'</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id='14'</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id='15'</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id='16'</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id='17'</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id='18'</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id='20'</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="5.0"/>
+            <where>id='21'</where>
+        </update>
+        <update tableName="product" >
+            <column name="rating" type="double" value="4.0"/>
+            <where>id='19'</where>
+        </update>
+    </changeSet>
+
 </databaseChangeLog>
