@@ -92,5 +92,11 @@ public class ProductController {
         return new ResponseEntity<>(productService.getProductsByUser(username), HttpStatus.OK);
     }
 
-
+    @ApiOperation(
+            value = "Get top products / Получить список продуктов с наивысшей оценкой"
+    )
+    @GetMapping("/top")
+    public ResponseEntity<List<ProductDto>> getTopProducts() {
+        return new ResponseEntity<>(productService.getTopProducts(), HttpStatus.OK);
+    }
 }

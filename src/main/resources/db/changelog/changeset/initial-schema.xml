@@ -357,4 +357,6 @@
     <changeSet id="2020-04-12--07" author="greenmapc">
         <modifyDataType tableName="product" columnName="rating" newDataType="float"/>
     </changeSet>
+
+    <include file="db/changelog/changeset/fill-bd.xml"/>
 </databaseChangeLog>

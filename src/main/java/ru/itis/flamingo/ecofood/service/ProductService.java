@@ -2,6 +2,7 @@ package ru.itis.flamingo.ecofood.service;
 
 import ru.itis.flamingo.ecofood.domain.dto.ProductDto;
 import ru.itis.flamingo.ecofood.domain.dto.ProductRequest;
+import ru.itis.flamingo.ecofood.domain.entity.Product;
 
 import java.util.List;
 
@@ -21,4 +22,5 @@ public interface ProductService {
 
     List<ProductDto> getProductsByUser(String username);
 
+    List<ProductDto> getTopProducts();
 }

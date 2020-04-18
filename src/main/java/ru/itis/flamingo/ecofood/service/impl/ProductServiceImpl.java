@@ -80,4 +80,11 @@ public class ProductServiceImpl implements ProductService {
         return user.getProducts();
     }
 
+    @Override
+    public List<ProductDto> getTopProducts(){
+        return productRepository.getTop10ByOrderByRatingDesc()
+                .stream()
+                .map(productMapper :: mapToDto)
+                .collect(Collectors.toList());
+    }
 }
