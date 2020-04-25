@@ -5,7 +5,7 @@
 
     <changeSet author="adelina" id="2020-04-18-1">
         <insert tableName="site_user">
-            <column name="id" value="10"/>
+            <column name="id" valueSequenceNext="user_id_seq"/>
             <column name="name" value="Hohohonfnfn10"/>
             <column name="email" value="afafafafafa10@gmail.com"/>
             <column name="username" value="Username10"/>
@@ -14,11 +14,11 @@
             <column name="contact_phone" value="8005553535"/>
             <column name="geo_position" value="Kazan"/>
             <column name="is_deleted" value="false"/>
-            <column name="password" value="password"/>
+            <column name="password" value="$2a$10$/gVkg5OXX0G0DjfP2pkgZ.dnifPbGFy0NWUqyi0QWGjrAGw03SlhS"/>
             <column name="main_photo" value="null"/>
         </insert>
         <insert tableName="site_user">
-            <column name="id" value="11"/>
+            <column name="id" valueSequenceNext="user_id_seq"/>
             <column name="name" value="Hohohonfnfn11"/>
             <column name="email" value="afafafafafa11@gmail.com"/>
             <column name="username" value="Username11"/>
@@ -27,11 +27,11 @@
             <column name="contact_phone" value="8005553535"/>
             <column name="geo_position" value="Kazan"/>
             <column name="is_deleted" value="false"/>
-            <column name="password" value="password"/>
+            <column name="password" value="$2a$10$/gVkg5OXX0G0DjfP2pkgZ.dnifPbGFy0NWUqyi0QWGjrAGw03SlhS"/>
             <column name="main_photo" value="null"/>
         </insert>
         <insert tableName="site_user">
-            <column name="id" value="12"/>
+            <column name="id" valueSequenceNext="user_id_seq"/>
             <column name="name" value="Hohohonfnfn12"/>
             <column name="email" value="afafafafafa12@gmail.com"/>
             <column name="username" value="Username12"/>
@@ -40,11 +40,11 @@
             <column name="contact_phone" value="8005553535"/>
             <column name="geo_position" value="Kazan"/>
             <column name="is_deleted" value="false"/>
-            <column name="password" value="password"/>
+            <column name="password" value="$2a$10$/gVkg5OXX0G0DjfP2pkgZ.dnifPbGFy0NWUqyi0QWGjrAGw03SlhS"/>
             <column name="main_photo" value="null"/>
         </insert>
         <insert tableName="site_user">
-            <column name="id" value="13"/>
+            <column name="id" valueSequenceNext="user_id_seq"/>
             <column name="name" value="Hohohonfnfn13"/>
             <column name="email" value="afafafafafa13@gmail.com"/>
             <column name="username" value="Username13"/>
@@ -53,11 +53,11 @@
             <column name="contact_phone" value="8005553535"/>
             <column name="geo_position" value="Kazan"/>
             <column name="is_deleted" value="false"/>
-            <column name="password" value="password"/>
+            <column name="password" value="$2a$10$/gVkg5OXX0G0DjfP2pkgZ.dnifPbGFy0NWUqyi0QWGjrAGw03SlhS"/>
             <column name="main_photo" value="null"/>
         </insert>
         <insert tableName="site_user">
-            <column name="id" value="14"/>
+            <column name="id" valueSequenceNext="user_id_seq"/>
             <column name="name" value="Hohohonfnfn14"/>
             <column name="email" value="afafafafafa14@gmail.com"/>
             <column name="username" value="Username14"/>
@@ -66,11 +66,11 @@
             <column name="contact_phone" value="8005553535"/>
             <column name="geo_position" value="Kazan"/>
             <column name="is_deleted" value="false"/>
-            <column name="password" value="password"/>
+            <column name="password" value="$2a$10$/gVkg5OXX0G0DjfP2pkgZ.dnifPbGFy0NWUqyi0QWGjrAGw03SlhS"/>
             <column name="main_photo" value="null"/>
         </insert>
         <insert tableName="site_user">
-            <column name="id" value="15"/>
+            <column name="id" valueSequenceNext="user_id_seq"/>
             <column name="name" value="Hohohonfnfn15"/>
             <column name="email" value="afafafafafa15@gmail.com"/>
             <column name="username" value="Username15"/>
@@ -79,11 +79,11 @@
             <column name="contact_phone" value="8005553535"/>
             <column name="geo_position" value="Kazan"/>
             <column name="is_deleted" value="false"/>
-            <column name="password" value="password"/>
+            <column name="password" value="$2a$10$/gVkg5OXX0G0DjfP2pkgZ.dnifPbGFy0NWUqyi0QWGjrAGw03SlhS"/>
             <column name="main_photo" value="null"/>
         </insert>
         <insert tableName="site_user">
-            <column name="id" value="16"/>
+            <column name="id" valueSequenceNext="user_id_seq"/>
             <column name="name" value="Hohohonfnfn16"/>
             <column name="email" value="afafafafafa16@gmail.com"/>
             <column name="username" value="Username16"/>
@@ -92,11 +92,11 @@
             <column name="contact_phone" value="8005553535"/>
             <column name="geo_position" value="Kazan"/>
             <column name="is_deleted" value="false"/>
-            <column name="password" value="password"/>
+            <column name="password" value="$2a$10$/gVkg5OXX0G0DjfP2pkgZ.dnifPbGFy0NWUqyi0QWGjrAGw03SlhS"/>
             <column name="main_photo" value="null"/>
         </insert>
         <insert tableName="site_user">
-            <column name="id" value="17"/>
+            <column name="id" valueSequenceNext="user_id_seq"/>
             <column name="name" value="Hohohonfnfn17"/>
             <column name="email" value="afafafafafa17@gmail.com"/>
             <column name="username" value="Username17"/>
@@ -105,11 +105,11 @@
             <column name="contact_phone" value="8005553535"/>
             <column name="geo_position" value="Kazan"/>
             <column name="is_deleted" value="false"/>
-            <column name="password" value="password"/>
+            <column name="password" value="$2a$10$/gVkg5OXX0G0DjfP2pkgZ.dnifPbGFy0NWUqyi0QWGjrAGw03SlhS"/>
             <column name="main_photo" value="null"/>
         </insert>
         <insert tableName="site_user">
-            <column name="id" value="19"/>
+            <column name="id" valueSequenceNext="user_id_seq"/>
             <column name="name" value="Hohohonfnfn19"/>
             <column name="email" value="afafafafafa19@gmail.com"/>
             <column name="username" value="Username19"/>
@@ -118,7 +118,7 @@
             <column name="contact_phone" value="8005553535"/>
             <column name="geo_position" value="Kazan"/>
             <column name="is_deleted" value="false"/>
-            <column name="password" value="password"/>
+            <column name="password" value="$2a$10$/gVkg5OXX0G0DjfP2pkgZ.dnifPbGFy0NWUqyi0QWGjrAGw03SlhS"/>
             <column name="main_photo" value="null"/>
         </insert>
         <insert tableName="site_user">
@@ -131,11 +131,11 @@
             <column name="contact_phone" value="8005553535"/>
             <column name="geo_position" value="Kazan"/>
             <column name="is_deleted" value="false"/>
-            <column name="password" value="password"/>
+            <column name="password" value="$2a$10$/gVkg5OXX0G0DjfP2pkgZ.dnifPbGFy0NWUqyi0QWGjrAGw03SlhS"/>
             <column name="main_photo" value="null"/>
         </insert>
         <insert tableName="site_user">
-            <column name="id" value="21"/>
+            <column name="id" valueSequenceNext="user_id_seq"/>
             <column name="name" value="Hohohonfnfn21"/>
             <column name="email" value="afafafafafa21@gmail.com"/>
             <column name="username" value="Username21"/>
@@ -144,14 +144,14 @@
             <column name="contact_phone" value="8005553535"/>
             <column name="geo_position" value="Kazan"/>
             <column name="is_deleted" value="false"/>
-            <column name="password" value="password"/>
+            <column name="password" value="$2a$10$/gVkg5OXX0G0DjfP2pkgZ.dnifPbGFy0NWUqyi0QWGjrAGw03SlhS"/>
             <column name="main_photo" value="null"/>
         </insert>
     </changeSet>
 
     <changeSet id="2020-04-18-4" author="adelina">
         <insert tableName="site_user">
-            <column name="id" value="18"/>
+            <column name="id" valueSequenceNext="user_id_seq"/>
             <column name="name" value="Hohohonfnfn18"/>
             <column name="email" value="afafafafafa18@gmail.com"/>
             <column name="username" value="Username18"/>
@@ -160,14 +160,16 @@
             <column name="contact_phone" value="8005553535"/>
             <column name="geo_position" value="Kazan"/>
             <column name="is_deleted" value="false"/>
-            <column name="password" value="password"/>
+            <column name="password" value="$2a$10$/gVkg5OXX0G0DjfP2pkgZ.dnifPbGFy0NWUqyi0QWGjrAGw03SlhS"/>
             <column name="main_photo" value="null"/>
         </insert>
     </changeSet>
 
+
+
     <changeSet author="adelina" id="2020-04-18-2">
         <insert tableName="product">
-            <column name="id" value="10"/>
+            <column name="id" valueSequenceNext="product_id_seq"/>
             <column name="title" value="помидоры «Красное солнце»"/>
             <column name="description"
                     value="Сочные помидоры «Красное солнце» - это помидоры-антиоксиданты. В их составе рекордное содержание ликопена. Ликопен - вещество, которое  активно борется с лишним весом, образованием тромбов, снижает  концентрацию «плохого» холестерина в крови."/>
@@ -175,10 +177,10 @@
             <column name="count" value="3"/>
             <column name="count_type" value="KILOGRAM"/>
             <column name="category_id" value="2"/>
-            <column name="user_id" value="10"/>
+            <column name="user_id" value="1"/>
         </insert>
         <insert tableName="product">
-            <column name="id" value="11"/>
+            <column name="id" valueSequenceNext="product_id_seq"/>
             <column name="title" value="Шпинат"/>
             <column name="description"
                     value="Шпинат насыщает, снабжает организм питательными веществами, выводит шлаки и токсины."/>
@@ -186,10 +188,10 @@
             <column name="count" value="3"/>
             <column name="count_type" value="KILOGRAM"/>
             <column name="category_id" value="2"/>
-            <column name="user_id" value="11"/>
+            <column name="user_id" value="2"/>
         </insert>
         <insert tableName="product">
-            <column name="id" value="12"/>
+            <column name="id" valueSequenceNext="product_id_seq"/>
             <column name="title" value="Брокколи"/>
             <column name="description"
                     value="По питательным свойствам белки брокколи могут сравниться с белками мяса – например, говядины, или с белками куриных яиц. Среди растений с ней могли бы сравниться спаржа, картофель, сладкая кукуруза или шпинат, однако в них белка всё-таки меньше."/>
@@ -197,10 +199,10 @@
             <column name="count" value="3"/>
             <column name="count_type" value="KILOGRAM"/>
             <column name="category_id" value="2"/>
-            <column name="user_id" value="12"/>
+            <column name="user_id" value="3"/>
         </insert>
         <insert tableName="product">
-            <column name="id" value="13"/>
+            <column name="id" valueSequenceNext="product_id_seq"/>
             <column name="title" value="Грецкий орех"/>
             <column name="description"
                     value="В ядрах грецких орехов много магния и калия, необходимых для здоровья сердца, если есть по два ореха в день, память улучшится, а четыре грецких ореха в день не только улучшат иммунитет, но и зарядят антиоксидантами."/>
@@ -208,10 +210,10 @@
             <column name="count" value="3"/>
             <column name="count_type" value="KILOGRAM"/>
             <column name="category_id" value="6"/>
-            <column name="user_id" value="13"/>
+            <column name="user_id" value="4"/>
         </insert>
         <insert tableName="product">
-            <column name="id" value="14"/>
+            <column name="id" valueSequenceNext="product_id_seq"/>
             <column name="title" value="Морошка"/>
             <column name="description"
                     value="Морошка богата микроэлементами, особенно кроветворного ряда — магний, кальций, калий, железо, алюминий, фосфор, кобальт, кремний, и витаминами С, В1, В3, РР, А."/>
@@ -219,10 +221,10 @@
             <column name="count" value="3"/>
             <column name="count_type" value="KILOGRAM"/>
             <column name="category_id" value="3"/>
-            <column name="user_id" value="14"/>
+            <column name="user_id" value="5"/>
         </insert>
         <insert tableName="product">
-            <column name="id" value="15"/>
+            <column name="id" valueSequenceNext="product_id_seq"/>
             <column name="title" value="Яблоки"/>
             <column name="description"
                     value="Яблоки содержат ряд витаминов и микроэлементов, повышающих иммунитет и улучшающих работу сердечно-сосудистой системы. Также в яблоке много пищевых волокон – клетчатки, которая обогащает наш рацион и заставляет работать кишечник."/>
@@ -230,10 +232,10 @@
             <column name="count" value="3"/>
             <column name="count_type" value="KILOGRAM"/>
             <column name="category_id" value="1"/>
-            <column name="user_id" value="15"/>
+            <column name="user_id" value="6"/>
         </insert>
         <insert tableName="product">
-            <column name="id" value="16"/>
+            <column name="id" valueSequenceNext="product_id_seq"/>
             <column name="title" value="Огурцы"/>
             <column name="description"
                     value="Огурцы на 95% состоят из воды и содержат очень малое количество белков, жиров и углеводов."/>
@@ -241,10 +243,10 @@
             <column name="count" value="3"/>
             <column name="count_type" value="KILOGRAM"/>
             <column name="category_id" value="2"/>
-            <column name="user_id" value="16"/>
+            <column name="user_id" value="7"/>
         </insert>
         <insert tableName="product">
-            <column name="id" value="17"/>
+            <column name="id" valueSequenceNext="product_id_seq"/>
             <column name="title" value="Курага"/>
             <column name="description"
                     value="Курага содержит много калия, поэтому она благотворно влияет на сердечно-сосудистую систему. Сухофрукт часто рекомендуют есть после инфарктов и инсультов – для восстановления организма."/>
@@ -252,10 +254,10 @@
             <column name="count" value="3"/>
             <column name="count_type" value="KILOGRAM"/>
             <column name="category_id" value="8"/>
-            <column name="user_id" value="17"/>
+            <column name="user_id" value="8"/>
         </insert>
         <insert tableName="product">
-            <column name="id" value="18"/>
+            <column name="id" valueSequenceNext="product_id_seq"/>
             <column name="title" value="Инжир"/>
             <column name="description"
                     value="Инжир богат клетчаткой, из-за чего быстро насыщает и надолго утоляет чувство голода. Эти плоды могут стать отличным снеком для перекуса посреди рабочего дня."/>
@@ -263,10 +265,10 @@
             <column name="count" value="3"/>
             <column name="count_type" value="KILOGRAM"/>
             <column name="category_id" value="8"/>
-            <column name="user_id" value="18"/>
+            <column name="user_id" value="9"/>
         </insert>
         <insert tableName="product">
-            <column name="id" value="19"/>
+            <column name="id" valueSequenceNext="product_id_seq"/>
             <column name="title" value="Сладкий перец"/>
             <column name="description"
                     value="Сладкий перец чрезвычайно богат витамином С, причем это свойство не зависит от его цвета. Является источником витамина B6"/>
@@ -274,10 +276,10 @@
             <column name="count" value="3"/>
             <column name="count_type" value="KILOGRAM"/>
             <column name="category_id" value="2"/>
-            <column name="user_id" value="19"/>
+            <column name="user_id" value="10"/>
         </insert>
         <insert tableName="product">
-            <column name="id" value="20"/>
+            <column name="id" valueSequenceNext="product_id_seq"/>
             <column name="title" value="Пекинская капуста"/>
             <column name="description"
                     value="Пекинская капуста богата пищевыми волокнами, очищающие организм"/>
@@ -285,10 +287,10 @@
             <column name="count" value="3"/>
             <column name="count_type" value="KILOGRAM"/>
             <column name="category_id" value="2"/>
-            <column name="user_id" value="20"/>
+            <column name="user_id" value="11"/>
         </insert>
         <insert tableName="product">
-            <column name="id" value="21"/>
+            <column name="id" valueSequenceNext="product_id_seq"/>
             <column name="title" value="Мед"/>
             <column name="description"
                     value="Мед является богатым источником витаминов и минералов. Он содержит все витамины группы В, К, Е, С, провитамин А."/>
@@ -296,13 +298,14 @@
             <column name="count" value="3"/>
             <column name="count_type" value="ITEM"/>
             <column name="category_id" value="5"/>
-            <column name="user_id" value="21"/>
+            <column name="user_id" value="11"/>
         </insert>
     </changeSet>
 
+
     <changeSet author="adelina" id="2020-04-18-3">
         <insert tableName="article">
-            <column name="id" value="0"/>
+            <column name="id" valueSequenceNext="article_id_seq"/>
             <column name="name" value="Почему органические продукты спасут мир"/>
             <column name="lid"
                     value="Недавнее исследование французских ученых выявило наличие пестицидов в воздухе, которым мы дышим. И это чертовски плохие новости, потому что большинство обнаруженных химикатов оказались крайне опасными - они могут вызывать рак и болезни эндокринной системы. А 28% из всех обнаруженных химикатов - это пестициды, запрещённые в Европе."/>
@@ -322,7 +325,7 @@
             <column name="date" value="18.04.2020"/>
         </insert>
         <insert tableName="article">
-            <column name="id" value="1"/>
+            <column name="id" valueSequenceNext="article_id_seq"/>
             <column name="name"
                     value="Замороженные органические продукты – оптимальная альтернатива свежим сезонным ягодам и фруктам"/>
             <column name="lid"
@@ -344,7 +347,7 @@
             <column name="date" value="17.04.2020"/>
         </insert>
         <insert tableName="article">
-            <column name="id" value="2"/>
+            <column name="id" valueSequenceNext="article_id_seq"/>
             <column name="name" value="Список продуктов с медленным углеводами: для хорошей работы мозга"/>
             <column name="lid"
                     value="Продукты с низким гликемическим уровнем (медленные углеводы) постепенно повышают уровень глюкозы в крови, что защищает организм от резких скачков содержания сахара в крови и настроения. Продукты с высоким гликемическим уровнем (быстрые углеводы) оказывают обратное влияние."/>
@@ -361,7 +364,7 @@
             <column name="date" value="18.04.2020"/>
         </insert>
         <insert tableName="article">
-            <column name="id" value="3"/>
+            <column name="id" valueSequenceNext="article_id_seq"/>
             <column name="name" value="5 ОВОЩЕЙ И ФРУКТОВ В ДЕНЬ: ЧТО, КАК И КОГДА?"/>
             <column name="lid"
                     value="Один из основных принципов здорового питания – 5 фруктов и овощей в день. Правильное питание – это не только специальные рецепты, продукты, блюда, меню – это соблюдение и этого простого правила! "/>
@@ -376,20 +379,20 @@
 
 А еще благодаря большому содержанию клетчатки овощи насыщают нас без лишних калорий.
 Сколько считается?
-- 1 порция = 80 г свежих или замороженных (в крайнем случае – консервированных) фруктов и овощей считается 1 порцией из Ваших 5 в день.
-- 1 порция = 30 г сухофруктов (что примерно равняется 80 г свежих фруктов) считается 1 порцией из Ваших 5 в день.
-- Только 1 раз в день = 150 мл фруктового сока, овощного сока или смузи. Ограничьте количество овощей и фруктов в жидком виде до 150 мл в день. И считается только раз в день, то есть второй смузи за сегодня, к сожалению, в общий зачет “5 в день” не пойдет…
-- Только 1 раз в день = 80 г бобовых. Да, считается только 80 г независимо от того, сколько Вы едите. Это потому, что, хотя они и являются хорошим источником клетчатки, они содержат меньше питательных веществ, чем другие фрукты и овощи.
+   - 1 порция = 80 г свежих или замороженных (в крайнем случае – консервированных) фруктов и овощей считается 1 порцией из Ваших 5 в день.
+   - 1 порция = 30 г сухофруктов (что примерно равняется 80 г свежих фруктов) считается 1 порцией из Ваших 5 в день.
+   - Только 1 раз в день = 150 мл фруктового сока, овощного сока или смузи. Ограничьте количество овощей и фруктов в жидком виде до 150 мл в день. И считается только раз в день, то есть второй смузи за сегодня, к сожалению, в общий зачет “5 в день” не пойдет…
+   - Только 1 раз в день = 80 г бобовых. Да, считается только 80 г независимо от того, сколько Вы едите. Это потому, что, хотя они и являются хорошим источником клетчатки, они содержат меньше питательных веществ, чем другие фрукты и овощи.
 Как и что считается?
-- Овощи и фрукты в любых блюдах (супы, макароны, рагу) – то есть совсем не обязательно есть их отдельно, считаются даже те, которые приготовлены в блюдах
-- Свежие фрукты и овощи
-- Замороженные
-- Консервированные – я, конечно же, за свежие, но если уж нет другого варианта, то выбирайте консервированные фрукты и овощи в натуральном соке или воде без добавления сахара или соли.
-- Сухофрукты – но их лучше все-таки есть во время еды, а не в качестве перекуса между приемами пищи, чтобы уменьшить вредное воздействие содержащегося в них сахара на зубы."/>
+   - Овощи и фрукты в любых блюдах (супы, макароны, рагу) – то есть совсем не обязательно есть их отдельно, считаются даже те, которые приготовлены в блюдах
+   - Свежие фрукты и овощи
+   - Замороженные
+   - Консервированные – я, конечно же, за свежие, но если уж нет другого варианта, то выбирайте консервированные фрукты и овощи в натуральном соке или воде без добавления сахара или соли.
+   - Сухофрукты – но их лучше все-таки есть во время еды, а не в качестве перекуса между приемами пищи, чтобы уменьшить вредное воздействие содержащегося в них сахара на зубы."/>
             <column name="date" value="16.04.2020"/>
         </insert>
         <insert tableName="article">
-            <column name="id" value="4"/>
+            <column name="id" valueSequenceNext="article_id_seq"/>
             <column name="name" value="Сладкие чудеса: рецепты необычного варенья"/>
             <column name="lid"
                     value="Провести лето и не заготовить ни одной баночки любимого варенья — просто преступление. Если вы еще не успели этого сделать, предлагаем необычные рецепты лучшего в мире лакомства."/>
