@@ -11,7 +11,7 @@ import ru.itis.flamingo.ecofood.domain.entity.enums.PaymentType;
 @NoArgsConstructor
 @Accessors(chain = true)
 public class BuyRequest {
-    private Long id;
+    private Long productId;
     private Integer count;
     private Integer cost;
     private DeliveryType deliveryType;

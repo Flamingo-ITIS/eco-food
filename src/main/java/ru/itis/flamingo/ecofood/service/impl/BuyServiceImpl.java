@@ -1,6 +1,7 @@
 package ru.itis.flamingo.ecofood.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.dao.PermissionDeniedDataAccessException;
 import org.springframework.stereotype.Service;
 import ru.itis.flamingo.ecofood.domain.dto.BuyDto;
 import ru.itis.flamingo.ecofood.domain.dto.BuyRequest;
@@ -14,6 +15,7 @@ import ru.itis.flamingo.ecofood.service.BuyService;
 import ru.itis.flamingo.ecofood.service.ProductService;
 import ru.itis.flamingo.ecofood.service.UserService;
 
+import java.security.AccessControlException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -32,7 +34,7 @@ public class BuyServiceImpl implements BuyService {
     @Override
     public BuyDto buyProduct(BuyRequest buyRequest, String username) {
         var user = userService.getUserByUsername(username);
-        var product = productService.findById(buyRequest.getId());
+        var product = productService.findById(buyRequest.getProductId());
         var buy = new Buy()
             .setCount(buyRequest.getCount())
             .setProduct(productMapper.mapToEntity(product))
@@ -51,5 +53,17 @@ public class BuyServiceImpl implements BuyService {
             .stream()
             .map(buyMapper)
             .collect(Collectors.toList());
+    }
+
+    @Override
+    public void confirmBuy(String username, Long id) {
+        var buy = buyRepository.findById(id)
+            .orElseThrow(() -> new IllegalArgumentException("Buy not found with id = " + id));
+        if (buy.getUser().getUsername().equals(username)) {
+            buy.setStatus(PaymentStatus.CONFIRM);
+            buyRepository.save(buy);
+        } else {
+            throw new AccessControlException("You have not permission for confirm this buy");
+        }
     }
 }

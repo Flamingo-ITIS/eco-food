@@ -358,4 +358,18 @@
         <modifyDataType tableName="product" columnName="rating" newDataType="float"/>
     </changeSet>
 
+    <changeSet id="2020-054-26--added-pk-for-buy" author="greenmapc">
+        <addColumn tableName="buy">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="2020-04-26--sequence-for-buy" author="greenmapc">
+        <createSequence sequenceName="buy_id_seq"
+                        incrementBy="1"
+                        minValue="1"/>
+    </changeSet>
+
 </databaseChangeLog>

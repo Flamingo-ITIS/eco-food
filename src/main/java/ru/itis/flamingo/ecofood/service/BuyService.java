@@ -11,4 +11,6 @@ public interface BuyService {
 
     List<BuyDto> getBuys(String username);
 
+    void confirmBuy(String username, Long id);
+
 }

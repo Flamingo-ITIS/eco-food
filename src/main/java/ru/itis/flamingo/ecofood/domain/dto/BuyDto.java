@@ -13,6 +13,8 @@ import ru.itis.flamingo.ecofood.domain.entity.enums.PaymentType;
 public class BuyDto {
     private String title;
     private Long id;
+    private Long productId;
+    private Long userId;
     private Integer count;
     private Integer cost;
     private DeliveryType deliveryType;

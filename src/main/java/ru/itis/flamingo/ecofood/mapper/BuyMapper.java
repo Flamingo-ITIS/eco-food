@@ -11,7 +11,8 @@ import java.util.function.Function;
 public interface BuyMapper extends Function<Buy, BuyDto> {
 
     @Mapping(target = "title", source = "product.title")
-    @Mapping(target = "id", source = "product.id")
+    @Mapping(target = "productId", source = "product.id")
+    @Mapping(target = "userId", source = "user.id")
     @Override
     BuyDto apply(Buy buy);
 
