@@ -3,7 +3,6 @@ package ru.itis.flamingo.ecofood.domain.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 import lombok.experimental.Accessors;
 import ru.itis.flamingo.ecofood.domain.entity.enums.CountType;
 
