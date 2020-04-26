@@ -7,6 +7,7 @@ import ru.itis.flamingo.ecofood.domain.repository.ProductRepository;
 import ru.itis.flamingo.ecofood.mapper.ProductMapper;
 import ru.itis.flamingo.ecofood.service.SearchService;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,6 +20,9 @@ public class SearchServiceImpl implements SearchService {
 
     @Override
     public List<ProductDto> searchProductsByTemplate(String template) {
+        if (template == null) {
+            return Collections.emptyList();
+        }
         return productRepository.searchProducts("%" + template.toLowerCase().trim() + "%")
             .stream()
             .map(productMapper::mapToDto)
