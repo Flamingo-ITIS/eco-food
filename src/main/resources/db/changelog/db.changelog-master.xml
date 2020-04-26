@@ -7,5 +7,6 @@
 
     <include file="db/changelog/changeset/initial-schema.xml"/>
     <include file="db/changelog/changeset/fill-bd.xml"/>
+    <include file="db/changelog/changeset/product-gin-index.xml"/>
 
 </databaseChangeLog>

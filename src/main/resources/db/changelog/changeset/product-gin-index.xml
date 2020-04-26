@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="2020-04-26--create-gin-index" author="greenmapc">
+        <sql dbms="postgresql">
+            CREATE EXTENSION pg_trgm;
+            CREATE INDEX product_search_idx  ON product
+            USING gin (title gin_trgm_ops, description gin_trgm_ops);
+        </sql>
+    </changeSet>
+</databaseChangeLog>
