@@ -22,5 +22,7 @@ public interface ProductService {
 
     List<ProductDto> getProductsByUser(String username);
 
+    List<ProductDto> getProductsByUserId(Long id);
+
     List<ProductDto> getTopProducts();
 }
