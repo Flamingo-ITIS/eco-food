@@ -83,11 +83,19 @@ public class ProductController {
     }
 
     @ApiOperation(
-        value = "Get user's products / Получить товары пользователя"
+        value = "Get user's products / Получить товары пользователя по username"
     )
     @GetMapping("/{username}/users")
     public ResponseEntity<List<ProductDto>> getProductsByUser(@PathVariable String username) {
         return new ResponseEntity<>(productService.getProductsByUser(username), HttpStatus.OK);
+    }
+
+    @ApiOperation(
+            value = "Get user's products / Получить товары пользователя по id"
+    )
+    @GetMapping("/{id}/users")
+    public ResponseEntity<List<ProductDto>> getProductsByUserId(@PathVariable Long id) {
+        return new ResponseEntity<>(productService.getProductsByUserId(id), HttpStatus.OK);
     }
 
     @ApiOperation(

@@ -49,6 +49,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public UserDto getUserByUserId(Long id) {
+        return userRepository.findUserById(id)
+                .map(userMapper::mapToDto)
+                .orElseThrow(() -> new IllegalArgumentException("User with id " + id + " not found"));
+    }
+
+    @Override
     public UserDto getUserByUsername(String username) {
         return userRepository.findUserByUsername(username)
                 .map(userMapper::mapToDto)

@@ -81,6 +81,12 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public List<ProductDto> getProductsByUserId(Long id) {
+        var user = userService.getUserByUserId(id);
+        return user.getProducts();
+    }
+
+    @Override
     public List<ProductDto> getTopProducts(){
         return productRepository.getTop10ByOrderByRatingDesc()
                 .stream()
