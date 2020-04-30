@@ -91,14 +91,6 @@ public class ProductController {
     }
 
     @ApiOperation(
-            value = "Get user's products / Получить товары пользователя по id"
-    )
-    @GetMapping("/{id}/users")
-    public ResponseEntity<List<ProductDto>> getProductsByUserId(@PathVariable Long id) {
-        return new ResponseEntity<>(productService.getProductsByUserId(id), HttpStatus.OK);
-    }
-
-    @ApiOperation(
             value = "Get top products / Получить список продуктов с наивысшей оценкой"
     )
     @GetMapping("/top")
