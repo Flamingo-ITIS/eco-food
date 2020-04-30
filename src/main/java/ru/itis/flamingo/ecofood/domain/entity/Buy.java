@@ -43,7 +43,7 @@ public class Buy {
     private Integer count;
 
     @Column(name = "cost")
-    private Integer cost;
+    private Double cost;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "delivery_type")

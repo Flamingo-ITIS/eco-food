@@ -16,7 +16,7 @@ public class BuyDto {
     private Long productId;
     private Long userId;
     private Integer count;
-    private Integer cost;
+    private Double cost;
     private DeliveryType deliveryType;
     private PaymentType paymentType;
     private PaymentStatus status;

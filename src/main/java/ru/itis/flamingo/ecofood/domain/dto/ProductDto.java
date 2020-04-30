@@ -12,6 +12,7 @@ public class ProductDto {
     private String description;
     private Double rating;
     private Integer count;
+    private Double cost;
     private CategoryDto category;
     private CountType countType;
     private CommonSellerDto user;

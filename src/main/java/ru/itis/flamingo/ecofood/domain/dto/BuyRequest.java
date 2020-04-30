@@ -13,7 +13,7 @@ import ru.itis.flamingo.ecofood.domain.entity.enums.PaymentType;
 public class BuyRequest {
     private Long productId;
     private Integer count;
-    private Integer cost;
+    private Double cost;
     private DeliveryType deliveryType;
     private PaymentType paymentType;
 }

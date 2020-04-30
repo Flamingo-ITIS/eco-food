@@ -47,6 +47,9 @@ public class Product {
     @Column(name = "count")
     private Integer count;
 
+    @Column(name = "cost")
+    private Double cost;
+
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
