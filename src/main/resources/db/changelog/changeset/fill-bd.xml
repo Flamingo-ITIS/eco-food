@@ -414,4 +414,54 @@
         </insert>
     </changeSet>
 
+    <changeSet author="adelina" id="2020-04-30-7">
+        <update tableName="product">
+            <column name="cost" value="180.0"/>
+            <where>id=1</where>
+        </update>
+        <update tableName="product">
+            <column name="cost" value="200.0"/>
+            <where>id=2</where>
+        </update>
+        <update tableName="product">
+            <column name="cost" value="150.0"/>
+            <where>id=3</where>
+        </update>
+        <update tableName="product">
+            <column name="cost" value="800.0"/>
+            <where>id=4</where>
+        </update>
+        <update tableName="product">
+            <column name="cost" value="1000.0"/>
+            <where>id=5</where>
+        </update>
+        <update tableName="product">
+            <column name="cost" value="100.0"/>
+            <where>id=6</where>
+        </update>
+        <update tableName="product">
+            <column name="cost" value="150.0"/>
+            <where>id=7</where>
+        </update>
+        <update tableName="product">
+            <column name="cost" value="250.0"/>
+            <where>id=8</where>
+        </update>
+        <update tableName="product">
+            <column name="cost" value="900.0"/>
+            <where>id=9</where>
+        </update>
+        <update tableName="product">
+            <column name="cost" value="200.0"/>
+            <where>id=10</where>
+        </update>
+        <update tableName="product">
+            <column name="cost" value="190.0"/>
+            <where>id=11</where>
+        </update>
+        <update tableName="product">
+            <column name="cost" value="1000.0"/>
+            <where>id=12</where>
+        </update>
+    </changeSet>
 </databaseChangeLog>
