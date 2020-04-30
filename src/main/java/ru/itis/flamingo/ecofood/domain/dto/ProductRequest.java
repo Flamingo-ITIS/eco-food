@@ -20,6 +20,8 @@ public class ProductRequest {
     @NotNull
     private CategoryName category;
     @NotNull
+    private Double cost;
+    @NotNull
     private Integer count;
     @NotNull
     private CountType countType;

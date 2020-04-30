@@ -31,16 +31,16 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductDto> findAll() {
         return productRepository.findAll()
-            .stream()
-            .map(productMapper::mapToDto)
-            .collect(Collectors.toList());
+                .stream()
+                .map(productMapper::mapToDto)
+                .collect(Collectors.toList());
     }
 
     @Override
     public ProductDto findById(Long id) {
         return productRepository.findById(id)
-            .map(productMapper::mapToDto)
-            .orElseThrow(() -> new IllegalArgumentException("Product with id = " + id + " not found"));
+                .map(productMapper::mapToDto)
+                .orElseThrow(() -> new IllegalArgumentException("Product with id = " + id + " not found"));
     }
 
     @Override
@@ -48,13 +48,14 @@ public class ProductServiceImpl implements ProductService {
         var category = categoryService.findByName(productRequest.getCategory());
         var user = userService.getUserByUsername(username);
         var product = new Product()
-            .setTitle(productRequest.getTitle())
-            .setRating(0D)
-            .setDescription(productRequest.getDescription())
-            .setCategory(categoryMapper.mapToEntity(category))
-            .setCount(productRequest.getCount())
-            .setCountType(productRequest.getCountType())
-            .setUser(userMapper.mapToEntity(user));
+                .setTitle(productRequest.getTitle())
+                .setRating(0D)
+                .setDescription(productRequest.getDescription())
+                .setCategory(categoryMapper.mapToEntity(category))
+                .setCount(productRequest.getCount())
+                .setCountType(productRequest.getCountType())
+                .setCost(productRequest.getCost())
+                .setUser(userMapper.mapToEntity(user));
         product.setRating(0D);
         return productMapper.mapToDto(productRepository.save(product));
     }
@@ -87,10 +88,10 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<ProductDto> getTopProducts(){
+    public List<ProductDto> getTopProducts() {
         return productRepository.getTop10ByOrderByRatingDesc()
                 .stream()
-                .map(productMapper :: mapToDto)
+                .map(productMapper::mapToDto)
                 .collect(Collectors.toList());
     }
 }
