@@ -3,6 +3,7 @@ package ru.itis.flamingo.ecofood.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -28,6 +29,7 @@ public class RecallController {
     private final RecallService recallService;
 
     @PostMapping
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity saveRecall(@AuthenticationPrincipal Principal principal,
                                      @RequestBody @Validated RecallRequest recallRequest) {
         recallService.saveRecall(principal.getName(), recallRequest);
@@ -40,6 +42,7 @@ public class RecallController {
     }
 
     @DeleteMapping
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity deleteRecall(@AuthenticationPrincipal Principal principal,
                                        @RequestParam Long recallId) {
 

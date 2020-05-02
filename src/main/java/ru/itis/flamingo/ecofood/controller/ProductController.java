@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -52,6 +53,7 @@ public class ProductController {
         value = "Create new product / Создать новый товар"
     )
     @PostMapping
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity<ProductDto> save(@RequestBody @Validated ProductRequest productRequest,
                                            @AuthenticationPrincipal Principal principal) {
         return new ResponseEntity<>(productService.create(principal.getName(), productRequest), HttpStatus.OK);
@@ -61,6 +63,7 @@ public class ProductController {
         value = "Update product / Обновить товар"
     )
     @PutMapping
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity update(@RequestBody ProductDto productDto) {
         productService.update(productDto);
         return new ResponseEntity(HttpStatus.OK);
@@ -70,6 +73,7 @@ public class ProductController {
         value = "Delete product / Удалить товар"
     )
     @DeleteMapping
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity delete(@RequestBody ProductDto productDto) {
         productService.delete(productDto);
         return new ResponseEntity(HttpStatus.OK);
@@ -79,6 +83,7 @@ public class ProductController {
         value = "Delete product by id / Удалить товар по идентификатору"
     )
     @DeleteMapping(value = "/{id}")
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity delete(@PathVariable Long id) {
         productService.delete(id);
         return new ResponseEntity(HttpStatus.OK);
