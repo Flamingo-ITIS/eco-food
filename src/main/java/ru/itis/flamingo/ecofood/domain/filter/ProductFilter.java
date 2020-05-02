@@ -9,7 +9,5 @@ import ru.itis.flamingo.ecofood.domain.entity.enums.CategoryName;
 @AllArgsConstructor
 @Accessors(chain = true)
 public class ProductFilter {
-//    private Boolean costSort;
-//    private Boolean ratingSort;
     private CategoryName category;
 }
