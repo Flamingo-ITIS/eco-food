@@ -3,6 +3,7 @@ package ru.itis.flamingo.ecofood.controller;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.itis.flamingo.ecofood.domain.dto.ProductDto;
 import ru.itis.flamingo.ecofood.domain.dto.ProductRequest;
+import ru.itis.flamingo.ecofood.domain.filter.ProductFilter;
 import ru.itis.flamingo.ecofood.service.ProductService;
 
 import java.security.Principal;
@@ -34,8 +36,8 @@ public class ProductController {
         value = "Get list of products / Получить список продуктов"
     )
     @GetMapping
-    public ResponseEntity<List<ProductDto>> findAll() {
-        return new ResponseEntity<>(productService.findAll(), HttpStatus.OK);
+    public ResponseEntity<List<ProductDto>> findAll(ProductFilter filter, Pageable pageable) {
+        return new ResponseEntity<>(productService.findAll(filter, pageable), HttpStatus.OK);
     }
 
     @ApiOperation(
