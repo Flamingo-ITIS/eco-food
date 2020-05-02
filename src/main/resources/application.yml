@@ -15,7 +15,7 @@ spring:
     default-schema: public
 
 server:
-  port: 9000
+  port: ${PORT}
 
 jwt:
   secret: secret

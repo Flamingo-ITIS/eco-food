@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://ec2-79-125-26-232.eu-west-1.compute.amazonaws.com:5432/dek5t105scaded
+    username: ${db.username}
+    password: ${db.password}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+    default-schema: public
+
+server:
+  port: 9000
+
+jwt:
+  secret: secret
+  expirationInMs: 604800000
+
+user_data:
+  photo_path: ${profile.photo.path}
