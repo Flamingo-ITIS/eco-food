@@ -4,6 +4,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,6 +40,7 @@ public class UserController {
         value = "Update user info / Обновить информацию  пользователя"
     )
     @PutMapping("/update-user")
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity<UserDto> updateUser(@RequestBody UserDto userDto) {
         userService.update(userDto);
         return new ResponseEntity<>(HttpStatus.OK);
@@ -48,6 +50,7 @@ public class UserController {
         value = "Delete user / Удалить пользователя"
     )
     @PutMapping("/delete-user")
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity<UserDto> delete(@RequestBody UserDto userDto) {
         userService.deleteUser(userDto);
         return new ResponseEntity<>(HttpStatus.OK);
@@ -57,6 +60,7 @@ public class UserController {
         value = "Download user profile photo / Загрузить фото пользователя "
     )
     @PostMapping("/profile-photo")
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity updateProfilePhoto(@RequestParam(value = "file", required = false) MultipartFile file,
                                              @AuthenticationPrincipal Principal principal) {
         mediaService.downloadProfilePhoto(principal.getName(), file);

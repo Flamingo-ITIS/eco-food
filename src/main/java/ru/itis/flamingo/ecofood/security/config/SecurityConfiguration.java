@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -23,6 +24,10 @@ import ru.itis.flamingo.ecofood.security.jwt.JwtSecurityConfigurer;
 
 @Configuration
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(
+    prePostEnabled = true,
+    securedEnabled = true
+)
 @RequiredArgsConstructor
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
@@ -37,23 +42,23 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.cors().and().csrf().disable()
-                .authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/sign-up").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .formLogin()
-                .successHandler(successHandler)
-                .failureHandler(failureHandler)
-                .permitAll()
-                .and()
-                .logout()
-                .deleteCookies("JSESSIONID")
-                .invalidateHttpSession(false)
-                .logoutSuccessHandler(logoutSuccessHandler);
+            .authorizeRequests()
+            .antMatchers(HttpMethod.POST, "/sign-up").permitAll()
+            .anyRequest().permitAll()
+            .and()
+            .formLogin()
+            .successHandler(successHandler)
+            .failureHandler(failureHandler)
+            .permitAll()
+            .and()
+            .logout()
+            .deleteCookies("JSESSIONID")
+            .invalidateHttpSession(false)
+            .logoutSuccessHandler(logoutSuccessHandler);
 
 
         http.apply(jwtSecurityConfigurer)
-                .and().exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint);
+            .and().exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint);
     }
 
     @Override
