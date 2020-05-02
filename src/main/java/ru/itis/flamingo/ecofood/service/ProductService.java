@@ -1,14 +1,16 @@
 package ru.itis.flamingo.ecofood.service;
 
+import org.springframework.data.domain.Pageable;
 import ru.itis.flamingo.ecofood.domain.dto.ProductDto;
 import ru.itis.flamingo.ecofood.domain.dto.ProductRequest;
 import ru.itis.flamingo.ecofood.domain.entity.Product;
+import ru.itis.flamingo.ecofood.domain.filter.ProductFilter;
 
 import java.util.List;
 
 public interface ProductService {
 
-    List<ProductDto> findAll();
+    List<ProductDto> findAll(ProductFilter filter, Pageable pageable);
 
     ProductDto findById(Long id);
 

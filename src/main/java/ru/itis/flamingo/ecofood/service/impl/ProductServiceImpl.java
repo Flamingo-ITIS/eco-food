@@ -1,10 +1,12 @@
 package ru.itis.flamingo.ecofood.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import ru.itis.flamingo.ecofood.domain.dto.ProductDto;
 import ru.itis.flamingo.ecofood.domain.dto.ProductRequest;
 import ru.itis.flamingo.ecofood.domain.entity.Product;
+import ru.itis.flamingo.ecofood.domain.filter.ProductFilter;
 import ru.itis.flamingo.ecofood.domain.repository.ProductRepository;
 import ru.itis.flamingo.ecofood.mapper.CategoryMapper;
 import ru.itis.flamingo.ecofood.mapper.ProductMapper;
@@ -12,6 +14,8 @@ import ru.itis.flamingo.ecofood.mapper.UserMapper;
 import ru.itis.flamingo.ecofood.service.CategoryService;
 import ru.itis.flamingo.ecofood.service.ProductService;
 import ru.itis.flamingo.ecofood.service.UserService;
+import ru.itis.flamingo.ecofood.util.FilterProcessor;
+import ru.itis.flamingo.ecofood.util.ProductSpec;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,9 +32,13 @@ public class ProductServiceImpl implements ProductService {
     private final CategoryService categoryService;
     private final UserService userService;
 
+    private final FilterProcessor<ProductFilter, Product> filterProcessor = FilterProcessor
+        .strict(ProductFilter::getCategory, ProductSpec::categoryLike)
+        .build();
+
     @Override
-    public List<ProductDto> findAll() {
-        return productRepository.findAll()
+    public List<ProductDto> findAll(ProductFilter filter, Pageable pageable) {
+        return productRepository.findAll(filterProcessor.buildSpec(filter))
                 .stream()
                 .map(productMapper::mapToDto)
                 .collect(Collectors.toList());
@@ -90,8 +98,9 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductDto> getTopProducts() {
         return productRepository.getTop10ByOrderByRatingDesc()
-                .stream()
-                .map(productMapper::mapToDto)
-                .collect(Collectors.toList());
+            .stream()
+            .map(productMapper::mapToDto)
+            .collect(Collectors.toList());
     }
+
 }
