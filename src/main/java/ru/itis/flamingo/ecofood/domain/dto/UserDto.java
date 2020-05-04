@@ -18,7 +18,7 @@ public class UserDto {
     private String geoPosition;
     private String email;
     private List<ProductDto> favorites;
-    private List<Buy> buys;
+    private List<BuyDto> buys;
     private Boolean isDeleted;
     private List<ProductDto> products;
 }

@@ -16,7 +16,6 @@ import ru.itis.flamingo.ecofood.service.UserService;
 
 import java.security.AccessControlException;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -48,10 +47,7 @@ public class BuyServiceImpl implements BuyService {
     @Override
     public List<BuyDto> getBuys(String username) {
         return userService.getUserByUsername(username)
-            .getBuys()
-            .stream()
-            .map(buyMapper)
-            .collect(Collectors.toList());
+            .getBuys();
     }
 
     @Override
@@ -64,5 +60,12 @@ public class BuyServiceImpl implements BuyService {
         } else {
             throw new AccessControlException("You have not permission for confirm this buy");
         }
+    }
+
+    @Override
+    public BuyDto getBuyById(Long id) {
+        return buyRepository.getBuyById(id)
+                .map(buyMapper :: apply)
+                .orElseThrow(() -> new IllegalArgumentException("Buy not found with id = " + id));
     }
 }

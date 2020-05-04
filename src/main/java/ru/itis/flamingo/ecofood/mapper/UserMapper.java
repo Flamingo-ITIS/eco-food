@@ -7,7 +7,7 @@ import ru.itis.flamingo.ecofood.domain.dto.SimpleUserDto;
 import ru.itis.flamingo.ecofood.domain.dto.UserDto;
 import ru.itis.flamingo.ecofood.domain.entity.User;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {BuyMapper.class})
 public interface UserMapper {
 
     UserDto mapToDto(User entity);

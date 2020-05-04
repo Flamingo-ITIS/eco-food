@@ -38,7 +38,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductDto> findAll(ProductFilter filter, Pageable pageable) {
-        return productRepository.findAll(filterProcessor.buildSpec(filter))
+        return productRepository.findAll(filterProcessor.buildSpec(filter), pageable)
                 .stream()
                 .map(productMapper::mapToDto)
                 .collect(Collectors.toList());
