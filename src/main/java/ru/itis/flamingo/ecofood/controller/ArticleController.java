@@ -19,7 +19,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/articles")
 @Api(value = "ArticleController", description = "Articles operations")
-@PreAuthorize("isAuthenticated()")
 public class ArticleController {
 
     private final ArticleService articleService;
