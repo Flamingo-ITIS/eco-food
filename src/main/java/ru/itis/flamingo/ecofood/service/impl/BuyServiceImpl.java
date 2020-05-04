@@ -65,4 +65,11 @@ public class BuyServiceImpl implements BuyService {
             throw new AccessControlException("You have not permission for confirm this buy");
         }
     }
+
+    @Override
+    public BuyDto getBuyById(Long id) {
+        return buyRepository.getBuyById(id)
+                .map(buyMapper :: apply)
+                .orElseThrow(() -> new IllegalArgumentException("Buy not found with id = " + id));
+    }
 }

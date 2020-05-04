@@ -15,5 +15,4 @@ public interface BuyMapper extends Function<Buy, BuyDto> {
     @Mapping(target = "userId", source = "user.id")
     @Override
     BuyDto apply(Buy buy);
-
 }

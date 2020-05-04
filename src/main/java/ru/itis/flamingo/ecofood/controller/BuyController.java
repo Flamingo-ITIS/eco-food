@@ -53,4 +53,12 @@ public class BuyController {
         return ResponseEntity.ok().build();
     }
 
+    @ApiOperation(
+            value = "Get buy by id / Получить покупку по id"
+    )
+    @GetMapping("/{id}")
+    public ResponseEntity<BuyDto> getBuyById(@PathVariable Long id) {
+        return new ResponseEntity<>(buyService.getBuyById(id), HttpStatus.OK);
+    }
 }
+

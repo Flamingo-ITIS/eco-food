@@ -13,4 +13,5 @@ public interface BuyService {
 
     void confirmBuy(String username, Long id);
 
+    BuyDto getBuyById(Long id);
 }
