@@ -23,3 +23,6 @@ jwt:
 
 user_data:
   photo_path: ${profile.photo.path}
+
+dropbox:
+  token: ${token}
