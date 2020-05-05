@@ -1,6 +1,7 @@
 package ru.itis.flamingo.ecofood.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -18,6 +19,7 @@ public class MediaServiceImpl implements MediaService {
 
     private final UserRepository userRepository;
     private final ImageRepository imageRepository;
+    @Qualifier("dropbox")
     private final FileService fileService;
 
     @Override

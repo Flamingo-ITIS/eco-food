@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import ru.itis.flamingo.ecofood.domain.dto.SignUpUserDto;
@@ -61,7 +60,7 @@ public class UserController {
     )
     @PostMapping("/profile-photo")
     @PreAuthorize("isAuthenticated()")
-    public ResponseEntity updateProfilePhoto(@RequestParam(value = "file", required = false) MultipartFile file,
+    public ResponseEntity updateProfilePhoto(@RequestBody MultipartFile file,
                                              @AuthenticationPrincipal Principal principal) {
         mediaService.downloadProfilePhoto(principal.getName(), file);
         return new ResponseEntity(HttpStatus.OK);
