@@ -61,7 +61,7 @@ public class UserController {
     )
     @PostMapping("/profile-photo")
     @PreAuthorize("isAuthenticated()")
-    public ResponseEntity updateProfilePhoto(@RequestParam(value = "file", required = false) MultipartFile file,
+    public ResponseEntity updateProfilePhoto(@RequestBody MultipartFile file,
                                              @AuthenticationPrincipal Principal principal) {
         mediaService.downloadProfilePhoto(principal.getName(), file);
         return new ResponseEntity(HttpStatus.OK);
