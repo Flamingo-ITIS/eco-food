@@ -67,7 +67,7 @@ public class ProductController {
     )
     @PutMapping
     @PreAuthorize("isAuthenticated()")
-    public ResponseEntity update(@RequestBody ProductDto productDto) {
+    public ResponseEntity update(@RequestBody @Validated ProductDto productDto) {
         productService.update(productDto);
         return new ResponseEntity(HttpStatus.OK);
     }

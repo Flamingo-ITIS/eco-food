@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,7 +32,7 @@ public class UserController {
         value = "Registration / Регистрация"
     )
     @PostMapping("/sign-up")
-    public ResponseEntity<UserDto> signUp(@RequestBody SignUpUserDto signUpUserDto) {
+    public ResponseEntity<UserDto> signUp(@RequestBody @Validated SignUpUserDto signUpUserDto) {
         return new ResponseEntity<>(userService.signUp(signUpUserDto), HttpStatus.OK);
     }
 
@@ -40,7 +41,7 @@ public class UserController {
     )
     @PutMapping("/update-user")
     @PreAuthorize("isAuthenticated()")
-    public ResponseEntity<UserDto> updateUser(@RequestBody UserDto userDto) {
+    public ResponseEntity<UserDto> updateUser(@RequestBody @Validated UserDto userDto) {
         userService.update(userDto);
         return new ResponseEntity<>(HttpStatus.OK);
     }

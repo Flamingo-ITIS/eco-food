@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,7 +35,7 @@ public class BuyController {
         value = "Buy product / Купить продукт"
     )
     @PostMapping
-    public ResponseEntity buyProduct(@RequestBody BuyRequest buyRequest,
+    public ResponseEntity buyProduct(@RequestBody @Validated BuyRequest buyRequest,
                                      @AuthenticationPrincipal Principal principal) {
         return new ResponseEntity<>(buyService.buyProduct(buyRequest, principal.getName()), HttpStatus.OK);
     }
