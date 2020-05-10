@@ -17,9 +17,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import ru.itis.flamingo.ecofood.domain.dto.ProductDto;
 import ru.itis.flamingo.ecofood.domain.dto.ProductRequest;
 import ru.itis.flamingo.ecofood.domain.filter.ProductFilter;
+import ru.itis.flamingo.ecofood.service.MediaService;
 import ru.itis.flamingo.ecofood.service.ProductService;
 
 import java.security.Principal;
@@ -32,6 +34,7 @@ import java.util.List;
 public class ProductController {
 
     private final ProductService productService;
+    private final MediaService mediaService;
 
     @ApiOperation(
         value = "Get list of products / Получить список продуктов"
@@ -104,4 +107,15 @@ public class ProductController {
     public ResponseEntity<List<ProductDto>> getTopProducts() {
         return new ResponseEntity<>(productService.getTopProducts(), HttpStatus.OK);
     }
+
+
+    @ApiOperation(
+            value = "Upload product images / Загрузить фотографии продукта"
+    )
+    @PostMapping("/{productId}/images")
+    public ResponseEntity<ProductDto> uploadImages(@PathVariable Long productId,
+                                                   @RequestBody List<MultipartFile> fileList) {
+        return new ResponseEntity<>(mediaService.uploadProductImages(productId, fileList), HttpStatus.OK);
+    }
+
 }

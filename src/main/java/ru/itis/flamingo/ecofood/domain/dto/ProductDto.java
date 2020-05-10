@@ -4,6 +4,8 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 import ru.itis.flamingo.ecofood.domain.entity.enums.CountType;
 
+import java.util.List;
+
 @Data
 @Accessors(chain = true)
 public class ProductDto {
@@ -16,4 +18,5 @@ public class ProductDto {
     private CategoryDto category;
     private CountType countType;
     private CommonSellerDto user;
+    private List<ImageDto> images;
 }

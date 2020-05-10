@@ -398,4 +398,9 @@
         <dropUniqueConstraint tableName="buy" constraintName="basket_product_user_id_key"/>
     </changeSet>
 
+    <changeSet id="2020-05-11--1" author="greenmapc">
+        <modifyDataType tableName="product_image" columnName="product_id" newDataType="bigint"/>
+        <modifyDataType tableName="product_image" columnName="image_id" newDataType="bigint"/>
+    </changeSet>
+
 </databaseChangeLog>
