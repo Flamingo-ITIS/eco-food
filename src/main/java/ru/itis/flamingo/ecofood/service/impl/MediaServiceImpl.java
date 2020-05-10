@@ -5,12 +5,17 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
+import ru.itis.flamingo.ecofood.domain.dto.ProductDto;
 import ru.itis.flamingo.ecofood.domain.entity.Image;
 import ru.itis.flamingo.ecofood.domain.repository.ImageRepository;
+import ru.itis.flamingo.ecofood.domain.repository.ProductRepository;
 import ru.itis.flamingo.ecofood.domain.repository.UserRepository;
+import ru.itis.flamingo.ecofood.mapper.ProductMapper;
 import ru.itis.flamingo.ecofood.service.FileService;
 import ru.itis.flamingo.ecofood.service.MediaService;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -19,6 +24,8 @@ public class MediaServiceImpl implements MediaService {
 
     private final UserRepository userRepository;
     private final ImageRepository imageRepository;
+    private final ProductRepository productRepository;
+    private final ProductMapper productMapper;
     @Qualifier("dropbox")
     private final FileService fileService;
 
@@ -47,6 +54,11 @@ public class MediaServiceImpl implements MediaService {
     }
 
     @Override
+    public byte[] getMedia(String name) {
+        return fileService.getFile(name);
+    }
+
+    @Override
     @Transactional
     public Image downloadImage(MultipartFile multipartFile) {
         var savedFileName = generateFileName(multipartFile.getOriginalFilename());
@@ -55,6 +67,18 @@ public class MediaServiceImpl implements MediaService {
         var image = imageRepository.save(mainPhoto);
         fileService.saveFile(multipartFile, savedFileName);
         return image;
+    }
+
+    @Override
+    public ProductDto uploadProductImages(Long productId, List<MultipartFile> multipartFileList) {
+        var product = productRepository.findById(productId).orElseThrow(() -> new IllegalArgumentException("Product with id " + productId + " not found"));
+        List<Image> productImage = new ArrayList<>();
+        for (MultipartFile file : multipartFileList) {
+            productImage.add(downloadImage(file));
+        }
+        product.setImages(productImage);
+        product = productRepository.save(product);
+        return productMapper.mapToDto(product);
     }
 
     private String generateFileName(String originalName) {

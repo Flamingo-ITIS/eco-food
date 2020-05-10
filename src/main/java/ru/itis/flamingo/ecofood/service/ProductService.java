@@ -1,6 +1,7 @@
 package ru.itis.flamingo.ecofood.service;
 
 import org.springframework.data.domain.Pageable;
+import org.springframework.web.multipart.MultipartFile;
 import ru.itis.flamingo.ecofood.domain.dto.ProductDto;
 import ru.itis.flamingo.ecofood.domain.dto.ProductRequest;
 import ru.itis.flamingo.ecofood.domain.entity.Product;

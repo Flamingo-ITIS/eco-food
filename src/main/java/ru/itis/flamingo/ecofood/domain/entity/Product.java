@@ -14,9 +14,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import java.util.List;
 
 @Table(name = "product")
 @Entity
@@ -57,5 +60,13 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    @ManyToMany
+    @JoinTable(
+        name = "product_image",
+        joinColumns = { @JoinColumn(name = "product_id") },
+        inverseJoinColumns = { @JoinColumn(name = "image_id") }
+    )
+    private List<Image> images;
 
 }

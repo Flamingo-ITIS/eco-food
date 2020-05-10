@@ -13,9 +13,11 @@ import ru.itis.flamingo.ecofood.mapper.UserMapper;
 import ru.itis.flamingo.ecofood.service.BuyService;
 import ru.itis.flamingo.ecofood.service.ProductService;
 import ru.itis.flamingo.ecofood.service.UserService;
+import ru.itis.flamingo.ecofood.util.BuyComporator;
 
 import java.security.AccessControlException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -47,7 +49,10 @@ public class BuyServiceImpl implements BuyService {
     @Override
     public List<BuyDto> getBuys(String username) {
         return userService.getUserByUsername(username)
-            .getBuys();
+                .getBuys()
+                .stream()
+                .sorted(new BuyComporator())
+                .collect(Collectors.toList());
     }
 
     @Override

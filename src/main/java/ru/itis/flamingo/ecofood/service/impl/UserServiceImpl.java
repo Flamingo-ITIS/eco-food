@@ -25,8 +25,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto signUp(SignUpUserDto newUser) {
         newUser.setPassword(bCryptPasswordEncoder.encode(newUser.getPassword()));
-        newUser.setIsDeleted(false);
-        return Optional.of(userRepository.save(userMapper.mapToEntity(newUser).setRole(Role.PARTNER)))
+        return Optional.of(userRepository.save(userMapper.mapToEntity(newUser)
+                .setRole(Role.PARTNER))
+                .setIsDeleted(false))
                 .map(userMapper::mapToDto)
                 .get();
     }
