@@ -1,5 +1,6 @@
 package ru.itis.flamingo.ecofood.service.impl;
 
+import liquibase.util.StringUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -25,22 +26,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto signUp(SignUpUserDto newUser) {
         newUser.setPassword(bCryptPasswordEncoder.encode(newUser.getPassword()));
-        return Optional.of(userRepository.save(userMapper.mapToEntity(newUser)
-                .setRole(Role.PARTNER))
-                .setIsDeleted(false))
+        newUser.setIsDeleted(false);
+        return Optional.of(userRepository.save(userMapper.mapToEntity(newUser).setRole(Role.PARTNER)))
                 .map(userMapper::mapToDto)
                 .get();
     }
 
     @Override
     public void update(UserDto updatedUser) {
-        if (!(updatedUser.getContactPhone().isEmpty() ||
-                updatedUser.getName().isEmpty() ||
-                updatedUser.getEmail().isEmpty()))
-            userRepository.save(userMapper.mapToEntity(updatedUser));
-        else {
-            throw new IllegalArgumentException("User's data is empty");
-        }
+        userRepository.save(userMapper.mapToEntity(updatedUser));
     }
 
     @Override
