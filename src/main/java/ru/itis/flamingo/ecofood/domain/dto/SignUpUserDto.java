@@ -16,4 +16,5 @@ public class SignUpUserDto {
     private String contactPhone;
     @NotNull
     private String geoPosition;
+    private Boolean isDeleted;
 }
