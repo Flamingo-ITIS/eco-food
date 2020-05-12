@@ -2,6 +2,7 @@ C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\controller\ArticleController.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\service\FavoritesService.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\domain\repository\ProductRepository.java
+C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\util\BuyComporator.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\domain\dto\BuyDto.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\domain\dto\ProductDto.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\service\impl\CategoryServiceImpl.java
@@ -21,6 +22,7 @@ C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\domain\dto\SignUpUserDto.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\service\impl\SearchServiceImpl.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\service\FileService.java
+C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\service\impl\DropBoxFileService.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\security\handler\FailureHandler.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\domain\dto\ImageDto.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\domain\repository\UserRepository.java
@@ -42,8 +44,11 @@ C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\mapper\CategoryMapper.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\service\ArticleService.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\mapper\BuyMapper.java
+C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\util\ProductSpec.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\controller\UserController.java
+C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\controller\MediaController.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\EcoFoodApplication.java
+C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\config\DropBoxConfig.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\domain\entity\enums\CountType.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\mapper\RecallResponseMapper.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\service\CategoryService.java
@@ -56,6 +61,7 @@ C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\mapper\UserMapper.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\service\impl\ArticleServiceImpl.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\service\impl\UserDetailsServiceImpl.java
+C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\domain\filter\ProductFilter.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\mapper\ArticleMapper.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\controller\ProductController.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\domain\dto\CategoryDto.java
@@ -73,6 +79,7 @@ C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\security\jwt\JwtAuthenticationEntryPoint.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\exception\ResourceNotFoundException.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\domain\repository\ImageRepository.java
+C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\util\FilterProcessor.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\security\handler\SuccessLogoutHandler.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\security\jwt\JwtToken.java
 C:\Users\greenmapc\Documents\greenmapc\uni\projects\eco-food-back\src\main\java\ru\itis\flamingo\ecofood\domain\entity\enums\PaymentType.java

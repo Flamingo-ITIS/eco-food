@@ -11,8 +11,8 @@
       <IntrospectionStateNumber>6192</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
-      <Relations>sequence|table|464685|464586|1
-sequence|table|464688|464591|1
+      <Relations>sequence|table|464688|464591|1
+sequence|table|464685|464586|1
 </Relations>
     </database>
     <database id="3" parent="1" name="homework_db">

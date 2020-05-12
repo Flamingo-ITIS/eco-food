@@ -1,5 +1,7 @@
 package ru.itis.flamingo.ecofood.mapper;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 import ru.itis.flamingo.ecofood.domain.dto.CategoryDto;
@@ -16,7 +18,7 @@ import ru.itis.flamingo.ecofood.domain.entity.User;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-05-02T20:29:11+0300",
+    date = "2020-05-13T00:29:20+0300",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 11.0.4 (Oracle Corporation)"
 )
 @Component
@@ -73,6 +75,32 @@ public class RecallResponseMapperImpl implements RecallResponseMapper {
         return commonSellerDto;
     }
 
+    protected ImageDto imageToImageDto(Image image) {
+        if ( image == null ) {
+            return null;
+        }
+
+        ImageDto imageDto = new ImageDto();
+
+        imageDto.setId( image.getId() );
+        imageDto.setName( image.getName() );
+
+        return imageDto;
+    }
+
+    protected List<ImageDto> imageListToImageDtoList(List<Image> list) {
+        if ( list == null ) {
+            return null;
+        }
+
+        List<ImageDto> list1 = new ArrayList<ImageDto>( list.size() );
+        for ( Image image : list ) {
+            list1.add( imageToImageDto( image ) );
+        }
+
+        return list1;
+    }
+
     protected ProductDto productToProductDto(Product product) {
         if ( product == null ) {
             return null;
@@ -89,6 +117,7 @@ public class RecallResponseMapperImpl implements RecallResponseMapper {
         productDto.setCategory( categoryToCategoryDto( product.getCategory() ) );
         productDto.setCountType( product.getCountType() );
         productDto.setUser( userToCommonSellerDto( product.getUser() ) );
+        productDto.setImages( imageListToImageDtoList( product.getImages() ) );
 
         return productDto;
     }
@@ -105,18 +134,5 @@ public class RecallResponseMapperImpl implements RecallResponseMapper {
         simpleUserDto.setName( user.getName() );
 
         return simpleUserDto;
-    }
-
-    protected ImageDto imageToImageDto(Image image) {
-        if ( image == null ) {
-            return null;
-        }
-
-        ImageDto imageDto = new ImageDto();
-
-        imageDto.setId( image.getId() );
-        imageDto.setName( image.getName() );
-
-        return imageDto;
     }
 }
