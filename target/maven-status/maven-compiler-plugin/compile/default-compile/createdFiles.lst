@@ -35,7 +35,6 @@ ru\itis\flamingo\ecofood\domain\dto\BuyRequest.class
 ru\itis\flamingo\ecofood\service\FavoritesService.class
 ru\itis\flamingo\ecofood\domain\repository\RecallRepository.class
 ru\itis\flamingo\ecofood\service\impl\BuyServiceImpl.class
-ru\itis\flamingo\ecofood\util\BuyComporator.class
 ru\itis\flamingo\ecofood\security\jwt\JwtSecurityConfigurer.class
 ru\itis\flamingo\ecofood\domain\repository\BuyRepository.class
 ru\itis\flamingo\ecofood\service\impl\DropBoxFileService.class

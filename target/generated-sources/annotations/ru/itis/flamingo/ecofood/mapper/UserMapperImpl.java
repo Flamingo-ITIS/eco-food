@@ -24,7 +24,7 @@ import ru.itis.flamingo.ecofood.domain.entity.enums.Role;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-05-13T00:29:20+0300",
+    date = "2020-05-13T00:30:47+0300",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 11.0.4 (Oracle Corporation)"
 )
 @Component
@@ -102,6 +102,7 @@ public class UserMapperImpl implements UserMapper {
         user.setPassword( dto.getPassword() );
         user.setContactPhone( dto.getContactPhone() );
         user.setGeoPosition( dto.getGeoPosition() );
+        user.setIsDeleted( dto.getIsDeleted() );
 
         return user;
     }

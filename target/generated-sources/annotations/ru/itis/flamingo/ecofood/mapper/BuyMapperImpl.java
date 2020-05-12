@@ -9,7 +9,7 @@ import ru.itis.flamingo.ecofood.domain.entity.User;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-05-13T00:29:20+0300",
+    date = "2020-05-13T00:30:47+0300",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 11.0.4 (Oracle Corporation)"
 )
 @Component
